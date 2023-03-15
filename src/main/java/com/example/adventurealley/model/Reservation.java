@@ -22,7 +22,6 @@ public class Reservation {
     private Date date;
     private int participants;
     private Status status;
-
     private double price;
 
 
