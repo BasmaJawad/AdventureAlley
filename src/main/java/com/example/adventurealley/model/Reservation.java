@@ -26,7 +26,9 @@ public class Reservation {
 
 
     @ManyToOne
-    @JoinColumn(name = "customerEmail", referencedColumnName = "email") //name = navn foreign key || referencedColumnName = det den rigtig hedder
+    @JoinColumn(name = "customerEmail", referencedColumnName = "email")
+    //name = navn foreign key || referencedColumnName = det den rigtig hedder
+    // refererer til customer Email fordi den har en attribut = email
     private Customer customer;
     @ManyToOne
     @JoinColumn(name = "activityID", referencedColumnName = "id")

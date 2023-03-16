@@ -27,6 +27,7 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     @JsonBackReference
     private Set<Reservation> reservations = new HashSet<>();
+    // Det er bare for at stoppe json loopet
 
 
 
