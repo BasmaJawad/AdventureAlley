@@ -1,0 +1,55 @@
+
+#frontPic {
+    position: relative;
+    width: 100%;
+}
+
+#frontPic img {
+    height: 100%;
+    width: 100%;
+}
+
+#frontPicText {
+    text-transform: uppercase;
+    font-family: "Bauhaus 93", sans-serif;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(28, 10, 49, 0.8);
+}
+
+#button {
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#button a {
+    display: inline-block;
+    background-color: #ee9621;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 15px 60px;
+    border-radius: 15px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#button a:hover {
+    background-color: #3d0f6d;
+}
