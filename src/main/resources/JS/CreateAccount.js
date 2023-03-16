@@ -44,6 +44,7 @@ async function postFormData(url, formData) {
         },
         body: formDataJsonString
     }
+
 // Henter dataen, og hvis den ikke er "ok", ,generes der en error message
     const fetchData = await fetch(url, postToDB)
 
