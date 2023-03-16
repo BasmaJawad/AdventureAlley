@@ -1,30 +1,57 @@
-// Add an event listener to the form submit button
-const createAccountForm = document.getElementById("CreateAccount");
 
-createAccountForm.addEventListener("submit",submitData);
+document.addEventListener('DOMContentLoaded', setup);
 
-function submitData(event) {
+let createAccountForm;
+function setup(){
+    createAccountForm = document.getElementById("CreateAccount");
+    createAccountForm.addEventListener("submit",submitData);
+}
+
+// Her submitter vi data
+async function submitData(event) {
 
     // Sikre at den ikke bliver submittet allerede i html'en, så sidden ikke reloader
     event.preventDefault();
 
-    /*
-        // Get the form data
-    const formData = new FormData(event.target);
+    const form = event.currentTarget //returnere form
+    const url = form.action; //henter form action (url'en)
 
-    // Send an HTTP POST request to the backend
-    fetch("http://localhost:8080/signup", {
+    try {
+
+        const formData = new FormData(form) //forbinder alle input med input-value fra brugeren
+
+        await postFormData(url, formData)
+
+        alert(formData.get('firstname') + ' ' + formData.get('lastname') + ' er oprettet');
+
+    }
+    catch (error) {
+    alert(error.message)
+
+}
+}
+// Vi sørger for at poste data til DB
+async function postFormData(url, formData) {
+
+    const plainFormData = Object.fromEntries(formData.entries()) //opdeler formData's elementer til objekter
+
+    const formDataJsonString = JSON.stringify(plainFormData) //konvertere plainFormData objekter til Json Strings
+
+    const postToDB = {
         method: "POST",
-        body: formData
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Handle the response data
-            console.log(data);
-        })
-        .catch(error => {
-            // Handle errors
-            console.error(error);
-        }
-     */
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: formDataJsonString
+    }
+// Henter dataen, og hvis den ikke er "ok", ,generes der en error message
+    const fetchData = await fetch(url, postToDB)
+
+    if(!fetchData.ok){
+        const errorMessage = await response.text()
+        throw new Error(errorMessage)
+    }
+
+    return fetchData.json();
+
 }
