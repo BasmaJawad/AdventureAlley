@@ -7,7 +7,11 @@ import com.example.adventurealley.service.CustomerService;
 import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin //for at vi kan sende requets hertil med javascript
@@ -26,10 +30,19 @@ public class CustomerRESTcontroller {
     }
 
 
-    @GetMapping("/login")
-    public Customer getCustomer(@RequestBody Customer customer){
-    return null;
+    @GetMapping ("/test")
+    public List<Customer> allCustomers(){
+        return customerRepo.findAll();
     }
 
 
-}
+    }
+
+
+
+
+
+
+
+
+
