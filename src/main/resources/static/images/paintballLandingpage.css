@@ -1,0 +1,28 @@
+body{
+    background-color: #ffffff;
+    font-family: Impact, sans-serif;
+}
+
+#reservationDiv{
+    padding: 50px;
+}
+
+#AvailableTimes{
+    width: 400px;
+}
+
+.timeDiv{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #3dbd35;
+    color: white;
+}

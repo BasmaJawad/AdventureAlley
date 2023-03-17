@@ -19,9 +19,8 @@ a {
 .wrapper {
     text-transform: uppercase;
     margin: 0 auto;
-    padding-top: 20px;
-    padding-right: 0px;
-    padding-left: 0px;
+    background-color: black;
+    padding: 20px 0px;
 }
 
 header {
@@ -29,6 +28,7 @@ header {
     font-family: "Bauhaus 93", sans-serif;
     text-transform: uppercase;
     margin-bottom: 45px;
+    background-color: black;
 }
 
 header nav {

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paintball</title>
+    <link rel="stylesheet" href="../static/navbar.css">
+    <link rel="stylesheet" href="../static/images/paintballLandingpage.css">
+
+</head>
+<body>
+
+<header>
+    <div class="wrapper">
+        <img id="logo" src="../static/images/paintballLogo.png"/>
+        <nav>
+            <ul>
+                <li><a href="#">HJEM</a></li>
+                <li><a href="#">AKTIVITETER</a></li>
+                <li><a href="#">PRISER</a></li>
+                <li><a href="#">LOGIN</a></li>
+                <li>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div> Billede her
+</div>
+
+<div id="reservationDiv">
+
+    <h1>Reservation</h1>
+
+    <div id="reservation">
+        <form action="http://localhost:8080/paintballBooking" method="post" id="CreateReservation">
+            <label for="date">Vælg Dato</label><br>
+            <input type="date" id="date" name="date"><br>
+
+            <br>
+            <br>
+
+            <div id="AvailableTimes">
+                <input type="hidden" id="selectedTime" name="selectedTime">
+            </div>
+
+            <br>
+            <br>
+            <label for="participants">Antal Deltager: </label> <br>
+            <input type="number" id="participants" name="participants"><br>
+
+            <br><br>
+            <input id="nextReservation" type="submit" value="Næste">
+        </form>
+    </div>
+</div>
+<script src="../JS/Reservation.js"></script>
+
+</body>
+</html>

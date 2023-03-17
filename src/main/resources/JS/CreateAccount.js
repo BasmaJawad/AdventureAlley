@@ -10,7 +10,7 @@ function setup(){
 // Her submitter vi data
 async function submitData(event) {
 
-    // Sikre at den ikke bliver submittet allerede i html'en, så sidden ikke reloader
+    // Sikre at den ikke bliver submittet allerede i html'en
     event.preventDefault();
 
     const form = event.currentTarget //returnere form
