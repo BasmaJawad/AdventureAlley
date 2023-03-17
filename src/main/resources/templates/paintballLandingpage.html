@@ -5,6 +5,7 @@
     <title>Paintball</title>
     <link rel="stylesheet" href="../static/navbar.css">
     <link rel="stylesheet" href="../static/images/paintballLandingpage.css">
+    <link rel="stylesheet" href="../static/loginpage.css">
 
 </head>
 <body>
@@ -53,7 +54,41 @@
         </form>
     </div>
 </div>
+
+<div class = "center">
+    <button id="show-login">Login</button>
+</div>
+
+<div class="popup">
+    <div class="close-btn">&times;</div>
+
+    <div class="form" id = "loginForm" >
+        <h2>Login</h2>
+
+
+        <div class="form-element">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Indtast din email">
+        </div>
+
+
+        <div class="form-element">
+            <label for="password">Adgangskode</label>
+            <input type="password" id="password" placeholder="Indtast adgangskode">
+        </div>
+
+
+        <div class="form-element">
+            <button  class="form-element" id="submitButton" type = "submit" value ="submit" > Sign in </button>
+        </div>
+    </div>
+
+
+</div>
+
+
 <script src="../JS/Reservation.js"></script>
+<script src="../JS/Login.js"></script>
 
 </body>
 </html>

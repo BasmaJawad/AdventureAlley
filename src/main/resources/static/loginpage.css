@@ -1,15 +1,3 @@
-{
-margin: 0px;
-padding: 0px;
-box-sizing: border-box;
-font-family: 'Montserrat', sans-serif;
-}
-
-
-body{
-    background: #151313;
-    font-family: "Raleway", sans-serif;
-}
 
 .center{
     position: absolute;
@@ -23,7 +11,7 @@ body{
     font-size: 15px;
     font-weight: 600;
     color: white;
-    background: cadetblue;
+    background: rebeccapurple;
     border: none;
     outline: none;
     cursor: pointer;
