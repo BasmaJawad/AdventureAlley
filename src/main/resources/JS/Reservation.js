@@ -22,7 +22,10 @@ function displayTimes(activities) {
     timesDiv.textContent = activities.startTime
 
     //gør div til en knap, som har value activityTimes altså hele aktiviteten
-    timesDiv.addEventListener('click', function () { selectTime(this, activities); console.log(activities) })
+    timesDiv.addEventListener('click', function () {
+        selectTime(this, activities);
+        console.log(activities)
+    })
 
     timesDiv.classList.add("timeDiv")
     timesDiv.classList.add("selected")
@@ -30,6 +33,23 @@ function displayTimes(activities) {
 
 }
 
+function displayTimes2(activities) {
+
+    const timesDiv = document.createElement("div")
+
+    timesDiv.textContent = activities.startTime
+
+    //gør div til en knap, som har value activityTimes altså hele aktiviteten
+    timesDiv.addEventListener('click', function () {
+        selectTime(this, activities);
+        console.log(activities)
+    })
+
+    timesDiv.classList.add("timeDiv")
+    timesDiv.classList.add("selected")
+    timeDivWrapper.appendChild(timesDiv)
+
+}
 function selectTime(element, activityTimes) {
 
 
@@ -45,4 +65,29 @@ function selectTime(element, activityTimes) {
 
     //selectedTime er en hidden input i html, som nu får en hel aktivitet som value
     document.getElementById('selectedTime').value = activityTimes;
+}
+
+//////////////
+
+const dateInput = document.getElementById("date")
+dateInput.addEventListener("change", getReservationsByDate)
+
+let reservations;
+
+async function getReservationsByDate() {
+    let getReservationsByDateUrl = "http://localhost:8080/reservation/";
+    getReservationsByDateUrl = getReservationsByDateUrl + dateInput.value
+
+    reservations = await fetchAny(getReservationsByDateUrl)
+    let reservation = reservations[0]
+    reservation.activityID
+
+}
+
+function filterReservations(reservation){
+
+    let filteredReservations = reservations.filter(reservation => reservation.activityID === activity.id)
+    return filteredReservations
+
+
 }
