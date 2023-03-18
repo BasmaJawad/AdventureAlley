@@ -76,18 +76,9 @@ let reservations;
 
 async function getReservationsByDate() {
     let getReservationsByDateUrl = "http://localhost:8080/reservation/";
-    getReservationsByDateUrl = getReservationsByDateUrl + dateInput.value
+    getReservationsByDateUrl = getReservationsByDateUrl + dateInput.value;
 
     reservations = await fetchAny(getReservationsByDateUrl)
-    let reservation = reservations[0]
-    console.log(reservations)
-
 }
 
-function filterReservations(reservation){
 
-    let filteredReservations = reservations.filter(reservation => reservation.activityID === activity.id)
-    return filteredReservations
-
-
-}

@@ -58,7 +58,7 @@ public class CustomerRESTcontroller {
     }
 
     @GetMapping("/reservation/{date}")             //spring bruger @DateTimeFormat til at caste string til en Date
-        public List<Reservation> reservations(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date){
+        public List<Reservation> reservations(@PathVariable String date){
         System.out.printf(String.valueOf(date));
             return reservationRepo.findReservationByDate(date);
 

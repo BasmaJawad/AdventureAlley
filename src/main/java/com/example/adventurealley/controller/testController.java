@@ -40,7 +40,7 @@ public Reservation reservation(){
         reservation.setPrice(100);
         reservation.setParticipants(6);
         reservation.setStatus(Status.PAYED);
-        reservation.setDate(new Date(2023-03-19));
+        reservation.setDate("2023-03-19");
         rp.save(reservation);
     return null;
     }
