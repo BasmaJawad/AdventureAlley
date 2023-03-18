@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Paintball</title>
     <link rel="stylesheet" href="../static/navbar.css">
-    <link rel="stylesheet" href="../static/images/paintballLandingpage.css">
     <link rel="stylesheet" href="../static/loginpage.css">
+    <link rel="stylesheet" href="../static/paintballLandingpage.css">
 
 </head>
 <body>
@@ -15,7 +15,7 @@
         <img id="logo" src="../static/images/logohvid.png"/>
         <nav>
             <ul>
-                <li><a href="#">HJEM</a></li>
+                <li><a href="hp.html">HJEM</a></li>
                 <li><a href="#">AKTIVITETER</a></li>
                 <li><a href="#">PRISER</a></li>
                 <li><a href="#">LOGIN</a></li>
@@ -25,12 +25,25 @@
         </nav>
     </div>
 </header>
-<div> Billede her
+<div id="background">
+    <img src="../static/images/man.png" />
+</div>
+
+<div id="paintballInfo">
+    <h1>PAINTBALL</h1>
+    <p id="paintballInfoText">
+        Book en time med paintball for dig og dine venner. Vores paintballbane er perfekt til grupper på <span style="font-weight: bold"> 6-18 deltagere </span>, og vi tilbyder en fantastisk oplevelse til en pris på kun 250 kr. pr. person.
+        Vores paintballbane er designet til at give dig den ultimative oplevelse, og vores erfarne personale vil sørge for, at du og dine venner får den bedste tid nogensinde.
+        <br><br>Vi tilbyder en bred vifte af paintball-udstyr, så du kan vælge det, der passer bedst til dig.
+
+        Så tøv ikke med at kontakte os for at booke din paintballoplevelse i dag. Vi glæder os til at se dig og dine venner på banen!
+    </p>
 </div>
 
 <div id="reservationDiv">
 
-    <h1>Reservation</h1>
+
+    <h2>Reservation</h2>
 
     <div id="reservation">
         <form action="http://localhost:8080/paintballBooking" method="post" id="CreateReservation">
@@ -54,8 +67,11 @@
         </form>
     </div>
 </div>
-
-<div class = "center">
+<br>
+<br>
+<br>
+<br>
+<div class ="center">
     <button id="show-login">Login</button>
 </div>
 
