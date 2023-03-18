@@ -25,6 +25,7 @@ public class Reservation {
     private double price;
 
 
+
     @ManyToOne
     @JoinColumn(name = "customerEmail", referencedColumnName = "email")
     //name = navn foreign key || referencedColumnName = det den rigtig hedder
@@ -34,6 +35,8 @@ public class Reservation {
     @JoinColumn(name = "activityID", referencedColumnName = "id")
     private Activity activity;
 
-
+    public Activity getActivity() {
+        return activity;
+    }
 
 }

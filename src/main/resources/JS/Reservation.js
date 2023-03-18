@@ -80,7 +80,7 @@ async function getReservationsByDate() {
 
     reservations = await fetchAny(getReservationsByDateUrl)
     let reservation = reservations[0]
-    reservation.activityID
+    console.log(reservations)
 
 }
 
