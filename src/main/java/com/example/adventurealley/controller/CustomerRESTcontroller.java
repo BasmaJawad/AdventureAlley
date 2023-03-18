@@ -51,8 +51,17 @@ public class CustomerRESTcontroller {
         return activityRepo.findAll();
     }
 
-    @GetMapping ("/test")
+    @GetMapping ("/Login")
     public List<Customer> allCustomers(){
         return customerRepo.findAll();
     }
+
+    @PostMapping ("/Login2")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Customer postCustomer2(@RequestBody Customer customer) {
+        System.out.println(customer);
+        return customerRepo.save(customer);
+    }
+
+
 }
