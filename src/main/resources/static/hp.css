@@ -1,0 +1,173 @@
+#pic{
+    position: absolute;
+  left: 45%;
+    width: 840px;
+    height: 840px;
+    top: 0px;
+    float: right;
+    z-index: -1;
+    box-shadow: 0 0 300px 300px #080c0d inset;
+}
+
+
+#smudge{
+    position: absolute;
+    left: -300px;
+    top: -60px;
+    opacity: 0.5;
+    height: 500px;
+    width: 900px;
+    z-index: -1;
+}
+
+#smudge2{
+    position: absolute;
+    left: -200px;
+    top: 800px;
+    opacity: 0.5;
+    width: 100%;
+    z-index: -1;
+}
+h1{
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #9331ff;
+}
+
+#titleDiv{
+    width: 600px;
+    margin-left: 90px;
+    margin-top: 100px;
+}
+
+#titleDiv p{
+    width: 480px;
+    font-family: Franklin Gothic Medium, sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 1.5em;
+    color: #d1dfe8;
+}
+
+#button {
+    margin-left: 120px;
+    margin-top: 50px;
+}
+
+
+#button a {
+    display: inline-block;
+    background-color: #ffba00;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 15px 60px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#button a:hover {
+    background-color: #3d0f6d;
+}
+
+#activityInfo {
+    text-align: center;
+    margin: 100px 150px;
+    margin-top: 320px;
+    margin-bottom: 70px;
+}
+
+#activityInfo p {
+    font-family: Impact, sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 45px;
+}
+
+#activitiesWrapper {
+    position: relative;
+
+    padding: 30px;
+    width: 100%;
+    height: 750px;
+    text-align: left;
+    align-content: center;
+}
+
+.activities {
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    position: relative;
+    margin: 30px;
+    margin-bottom: 50px;
+}
+
+.activities img {
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+    width: 580px;
+    height: 300px;
+    float: left;
+    object-fit: cover;
+    border: 1px solid white;
+}
+
+
+
+#paintball{
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+#lasertag{
+    margin-left: 100px;
+}
+
+.clickPic {
+    margin-right: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(245, 196, 62, 0.51) 100%);
+    height: 300px;
+}
+
+.clickPic a {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    padding-top: 230px;
+}
+
+.clickPic:hover {
+    background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(90, 21, 169, 0.73) 80%);
+}
+
+
+.clickPic:hover a {
+    color: #f3defc;
+}
+
+#bund{
+    margin-top:200px;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(252, 247, 247, 0.92);
+color: black;
+    padding: 100px;
+}
+
+
+

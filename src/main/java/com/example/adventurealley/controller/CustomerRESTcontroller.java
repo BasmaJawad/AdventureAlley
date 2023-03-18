@@ -9,6 +9,7 @@ import com.example.adventurealley.repository.ReservationRepo;
 import com.example.adventurealley.service.CustomerService;
 import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -56,6 +57,7 @@ public class CustomerRESTcontroller {
         return customerRepo.findAll();
     }
 
+
     @PostMapping ("/Login2")
     @ResponseStatus(HttpStatus.CREATED)
     public Customer postCustomer2(@RequestBody Customer customer) {
@@ -64,4 +66,10 @@ public class CustomerRESTcontroller {
     }
 
 
+    @GetMapping("/reservation/{date}")             //spring bruger @DateTimeFormat til at caste string til en Date
+        public List<Reservation> reservations(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date){
+        System.out.printf(String.valueOf(date));
+            return reservationRepo.findReservationByDate(date);
+
+    }
 }

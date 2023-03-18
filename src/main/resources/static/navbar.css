@@ -1,10 +1,11 @@
 body {
-    background-color: #00000a;
     margin: 0;
     font-family: "Bauhaus 93", sans-serif;
     font-weight: normal;
-
+    background-color: #080c0d;
+    color: white;
 }
+
 
 #logo {
     width: 350px;
@@ -19,7 +20,7 @@ a {
 .wrapper {
     text-transform: uppercase;
     margin: 0 auto;
-    background-color: black;
+
     padding: 20px 0px;
 }
 
@@ -28,16 +29,15 @@ header {
     font-family: "Bauhaus 93", sans-serif;
     text-transform: uppercase;
     margin-bottom: 45px;
-    background-color: black;
+
 }
 
 header nav {
     display: inline-block;
     vertical-align: middle;
     float: right;
-    margin-top: 15px;
     margin-bottom: 16px;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 header nav ul li {
