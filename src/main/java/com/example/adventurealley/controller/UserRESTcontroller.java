@@ -1,6 +1,7 @@
 package com.example.adventurealley.controller;
 
 
+import com.example.adventurealley.model.Customer;
 import com.example.adventurealley.model.User;
 import com.example.adventurealley.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,18 @@ public class UserRESTcontroller {
         return userService.getUsers();
     }
 
+    @GetMapping ("/UserLogin")
+    public List<User> allUserTest(){
+        return userService.getUsers();
+    }
+
     @GetMapping("/user/{username}")
     public ResponseEntity<User> getUser(@PathVariable String username){
         //userService.getUser();
         return null;
     }
+
+
+
+
 }

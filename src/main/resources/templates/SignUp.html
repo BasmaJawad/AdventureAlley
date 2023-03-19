@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/SignUp.css">
+    <title>Opret Bruger</title>
+
+</head>
+<body>
+<div class="background-image"></div>
+
+<div class="popup">
+<form action="http://localhost:8080/Login2" method="post" id="CreateAccount">
+  <h2>Opret Bruger</h2>
+
+  <div class="form-element">
+      <label for="firstname"style="color:white";>Fornavn:</label>
+      <input type="text" id="firstname" name="firstname" placeholder="Indtast dit fornavn"><br>
+  </div>
+
+    <div class="form-element">
+        <label for="lastname" style="color:white";>Efternavn:</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Indtast dit efternavn"><br>
+    </div>
+
+    <div class="form-element">
+        <label for="number"style="color:white";>Tlf:</label>
+        <input type="text" id="number" name="number"placeholder="Indtast dit tlf nr"><br>
+    </div>
+
+    <div class="form-element">
+        <label for="email"style="color:white";>E-mail:</label>
+        <input type="text" id="email" name="email"placeholder="Indtast E-mail"><br>
+    </div>
+
+  <div class="form-element">
+    <label for="password"style="color:white";>Adgangskode</label>
+    <input type="password" id="password" placeholder="Indtast adgangskode">
+  </div>
+
+
+  <div class="element">
+    <button id="submitButton" class="button" type = "submit" value ="submit" > Sign in </button>
+  </div>
+ </form>
+</div>
+<script src="../JS/SignUp.js"></script>
+</body>
+</html>

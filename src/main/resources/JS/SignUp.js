@@ -26,9 +26,9 @@ async function submitData(event) {
 
     }
     catch (error) {
-    alert(error.message)
+        alert(error.message)
 
-}
+    }
 }
 // Vi sørger for at poste data til DB
 async function postFormData(url, formData) {
