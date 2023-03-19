@@ -22,8 +22,8 @@
 
 #smudge2{
     position: absolute;
-    left: -200px;
-    top: 800px;
+    left: -100px;
+    top: 900px;
     opacity: 0.5;
     width: 100%;
     z-index: -1;

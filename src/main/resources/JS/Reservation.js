@@ -65,6 +65,7 @@ function selectTime(element, activityTimes) {
 
     //selectedTime er en hidden input i html, som nu får en hel aktivitet som value
     document.getElementById('selectedTime').value = activityTimes;
+
 }
 
 //////////////
@@ -79,6 +80,9 @@ async function getReservationsByDate() {
     getReservationsByDateUrl = getReservationsByDateUrl + dateInput.value;
 
     reservations = await fetchAny(getReservationsByDateUrl)
+    console.log(reservations[0]["activity"])
 }
+
+
 
 

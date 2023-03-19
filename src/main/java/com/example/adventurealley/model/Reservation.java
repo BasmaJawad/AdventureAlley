@@ -20,11 +20,10 @@ public class Reservation {
     // private String email;
     // private int activityId;
     private String date;
+
     private int participants;
     private Status status;
     private double price;
-
-
 
     @ManyToOne
     @JoinColumn(name = "customerEmail", referencedColumnName = "email")
@@ -35,8 +34,5 @@ public class Reservation {
     @JoinColumn(name = "activityID", referencedColumnName = "id")
     private Activity activity;
 
-    public Activity getActivity() {
-        return activity;
-    }
 
 }
