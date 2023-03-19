@@ -19,8 +19,7 @@
                 <li><a href="#">AKTIVITETER</a></li>
                 <li><a href="#">PRISER</a></li>
                 <li><a href="#">LOGIN</a></li>
-                <li>
-                </li>
+                <li></li>
             </ul>
         </nav>
     </div>
@@ -34,15 +33,14 @@
     <h1>PAINTBALL</h1>
     <p id="paintballInfoText">
         Book en time med paintball for dig og dine venner. Vores paintballbane er perfekt til grupper på <span style="font-weight: bold"> 6-18 deltagere </span>, og vi tilbyder en fantastisk oplevelse til en pris på kun 250 kr. pr. person.
-        Vores paintballbane er designet til at give dig den ultimative oplevelse, og vores erfarne personale vil sørge for, at du og dine venner får den bedste tid nogensinde.
-        <br><br>Vi tilbyder en bred vifte af paintball-udstyr, så du kan vælge det, der passer bedst til dig.
-
-        Så tøv ikke med at kontakte os for at booke din paintballoplevelse i dag. Vi glæder os til at se dig og dine venner på banen!
+        Vores erfarne personale vil sørge for, at du og dine venner får den bedste tid nogensinde.
+        <br><br>
+        Tøv ikke med at kontakte os for at booke din paintballoplevelse i dag. Vi glæder os til at se dig og dine venner på banen!
     </p>
     <div id="prisBox">
         <h4>Pris: 250 kr. pr. deltager</h4>
-        <h4>Deltager: 6-18</h4>
-        <h4>Varighed: 1 time </h4>
+        <h4>Deltager: 6-18 deltagere</h4>
+        <h4>Varighed: 60 min </h4>
     </div>
 </div>
 
@@ -51,6 +49,7 @@
 
     <img id="paint" src="../static/images/paint.png" />
     <img id="paint2" src="../static/images/paint.png" />
+
     <h2>Reservation</h2>
 
     <div id="reservation">
@@ -61,27 +60,28 @@
             <br>
             <br>
 
+
             <div id="AvailableTimes">
+                <label for="AvailableTimes">Vælg Tidspunkt</label><br>
                 <input type="hidden" id="selectedTime" name="selectedTime" >
             </div>
 
             <br>
             <br>
             <label for="participants">Antal Deltager: </label> <br>
-            <input class="resInput" type="number" id="participants" name="participants" required><br>
+            <input class="resInput" type="number" id="participants" name="participants" min="6" max="18" required><br>
 
             <br><br>
-            <input id="nextReservation" type="submit" value="Næste">
         </form>
+
+        <button class="nextReservation" type="submit" value="Næste" href="#popup" id="login-link">Næste</button>
     </div>
 </div>
 <br>
 <br>
 <br>
 <br>
-<div class ="center">
-    <button id="show-login">Login</button>
-</div>
+
 
 <div class="popup">
     <div class="close-btn">&times;</div>
@@ -103,10 +103,11 @@
 
 
         <div class="form-element">
-            <button  class="form-element" id="submitButton" type = "submit" value ="submit" > Sign in </button>
+            <button  class="form-element" id="submitButton" type = "submit" value ="submit" > Log ind </button>
         </div>
     </div>
-
+    <br>
+    <a href="SignUp.html" id = "linkSignUp" >Klik her for at tilmelde dig</a>
 
 </div>
 

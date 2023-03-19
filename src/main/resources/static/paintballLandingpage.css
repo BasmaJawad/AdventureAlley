@@ -24,10 +24,10 @@
 #reservationDiv {
     margin-right: 70px;
     margin-left: 70px;
-    margin-top: 15px;
+    margin-top: 40px;
 
     padding: 70px;
-    padding-top: 40px;
+    padding-top: 60px;
     background-color: rgba(42, 41, 41, 0.45);
     position: relative;
     border: 3px solid #ffad42;
@@ -51,6 +51,17 @@
 
 #AvailableTimes {
     width: 500px;
+    float: right;
+    position: absolute;
+    top: 140px;
+    left: 600px;
+    text-align: center;
+}
+
+#AvailableTimes label {
+    position: absolute;
+    left: 30px;
+    margin-bottom: 100px;
 }
 
 .timeDiv {
@@ -66,7 +77,7 @@
     padding-top: 10px;
 }
 
-.selected, #nextReservation:hover {
+.selected, .nextReservation:hover {
     background-color: #6c1cc5;
     color: white;
 }
@@ -101,7 +112,7 @@ h2 {
     font-size: 20px;
 }
 
-#nextReservation {
+.nextReservation {
     font-family: "Bauhaus 93", sans-serif;
     font-size: 20px;
     margin-top: 0px;
@@ -127,6 +138,7 @@ h2 {
     opacity: 0.3;
 
 }
+
 #paint2{
     width: 150px;
     position: absolute;
@@ -136,4 +148,31 @@ h2 {
     rotate: 90deg;
     opacity: 0.3;
 
+}
+
+.popup{
+    position: absolute;
+    height: 400px;
+    top: -150%;
+    left: 50%;
+    opacity:0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width:380px;
+    padding:20px 30px;
+    background: linear-gradient(to right, #5a15a9, #3a0669);
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    transistion:top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 200ms,
+    transform 20ms ease-in-out 200ms;
+
+}
+
+.popup.active{
+    top:1100px;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transistion:top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 200ms,
+    transform 20ms ease-in-out 200ms;
 }
