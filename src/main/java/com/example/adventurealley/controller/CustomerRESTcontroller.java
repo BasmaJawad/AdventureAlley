@@ -47,7 +47,7 @@ public class CustomerRESTcontroller {
         return reservationRepo.save(reservation);
     }
 
-    @GetMapping("/availableTimes")
+    @GetMapping("/activities")
     public List<Activity> getAvailableTimes() {
         return activityRepo.findAll();
     }

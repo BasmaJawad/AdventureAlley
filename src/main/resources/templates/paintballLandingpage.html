@@ -26,7 +26,8 @@
     </div>
 </header>
 <div id="background">
-    <img src="../static/images/man.png" />
+    <img id="man" src="../static/images/man.png" />
+
 </div>
 
 <div id="paintballInfo">
@@ -38,29 +39,36 @@
 
         Så tøv ikke med at kontakte os for at booke din paintballoplevelse i dag. Vi glæder os til at se dig og dine venner på banen!
     </p>
+    <div id="prisBox">
+        <h4>Pris: 250 kr. pr. deltager</h4>
+        <h4>Deltager: 6-18</h4>
+        <h4>Varighed: 1 time </h4>
+    </div>
 </div>
 
 <div id="reservationDiv">
 
 
+    <img id="paint" src="../static/images/paint.png" />
+    <img id="paint2" src="../static/images/paint.png" />
     <h2>Reservation</h2>
 
     <div id="reservation">
         <form action="http://localhost:8080/paintballBooking" method="post" id="CreateReservation">
             <label for="date">Vælg Dato</label><br>
-            <input type="date" id="date" name="date"><br>
+            <input class="resInput" type="date" id="date" name="date" required><br>
 
             <br>
             <br>
 
             <div id="AvailableTimes">
-                <input type="hidden" id="selectedTime" name="selectedTime">
+                <input type="hidden" id="selectedTime" name="selectedTime" >
             </div>
 
             <br>
             <br>
             <label for="participants">Antal Deltager: </label> <br>
-            <input type="number" id="participants" name="participants"><br>
+            <input class="resInput" type="number" id="participants" name="participants" required><br>
 
             <br><br>
             <input id="nextReservation" type="submit" value="Næste">
