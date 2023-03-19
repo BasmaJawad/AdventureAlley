@@ -58,7 +58,7 @@ public class CustomerRESTcontroller {
     }
 
 
-    @PostMapping ("/Login2")
+    @PostMapping ("/SignUp")
     @ResponseStatus(HttpStatus.CREATED)
     public Customer postCustomer2(@RequestBody Customer customer) {
         System.out.println(customer);

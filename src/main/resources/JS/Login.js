@@ -1,4 +1,4 @@
-document.querySelector("#show-login").
+document.querySelector("#login-link").
 addEventListener("click", function()
 {document.querySelector(".popup").classList.add("active");
 });

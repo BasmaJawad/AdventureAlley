@@ -20,6 +20,7 @@
 
 .popup{
     position: absolute;
+    height: 400px;
     top: -150%;
     left: 50%;
     opacity:0;
@@ -98,6 +99,10 @@
     cursor: pointer;
     font-weight: bold;
 
+}
+
+#linkSignUp{
+    color:white;
 }
 
 

@@ -26,7 +26,7 @@ public class UserRESTcontroller {
         return userService.getUsers();
     }
 
-    @GetMapping ("/test")
+    @GetMapping ("/UserLogin")
     public List<User> allUserTest(){
         return userService.getUsers();
     }
