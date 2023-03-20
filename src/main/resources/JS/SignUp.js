@@ -1,3 +1,6 @@
+// Refferer til den forrige html side
+let refferer = document.referrer;
+
 
 document.addEventListener('DOMContentLoaded', setup);
 
@@ -23,6 +26,8 @@ async function submitData(event) {
         await postFormData(url, formData)
 
         alert(formData.get('firstname') + ' ' + formData.get('lastname') + ' er oprettet');
+        //Vi skal sørger for at den redirekte til de rigtige landingpage, alt efter hvordan hvilke aktivitet man har valgt
+        window.location.href = refferer
 
     }
     catch (error) {
@@ -30,12 +35,18 @@ async function submitData(event) {
 
     }
 }
+
+
+let newCustomerStored;
+
 // Vi sørger for at poste data til DB
 async function postFormData(url, formData) {
 
-    const plainFormData = Object.fromEntries(formData.entries()) //opdeler formData's elementer til objekter
+    const newCustomer = Object.fromEntries(formData.entries()) //opdeler formData's elementer til objekter
+    newCustomerStored = localStorage.setItem("customer", JSON.stringify(newCustomer)); //sætter newCustomer i local storage
 
-    const formDataJsonString = JSON.stringify(plainFormData) //konvertere plainFormData objekter til Json Strings
+
+    const formDataJsonString = JSON.stringify(newCustomer) //konvertere newCustomer objekter til Json Strings
 
     const postToDB = {
         method: "POST",
@@ -45,7 +56,7 @@ async function postFormData(url, formData) {
         body: formDataJsonString
     }
 
-// Henter dataen, og hvis den ikke er "ok", ,generes der en error message
+// Henter data, og hvis den ikke er "ok", ,generes der en error message
     const fetchData = await fetch(url, postToDB)
 
     if(!fetchData.ok){

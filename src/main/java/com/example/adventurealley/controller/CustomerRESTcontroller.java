@@ -2,6 +2,7 @@ package com.example.adventurealley.controller;
 
 import com.example.adventurealley.model.Activity;
 import com.example.adventurealley.model.Customer;
+import com.example.adventurealley.model.Enums.Status;
 import com.example.adventurealley.model.Reservation;
 import com.example.adventurealley.repository.ActivityRepo;
 import com.example.adventurealley.repository.CustomerRepo;
@@ -44,6 +45,8 @@ public class CustomerRESTcontroller {
     @PostMapping("/paintballBooking")
     public Reservation postReservation(@RequestBody Reservation reservation) {
         System.out.println(reservation);
+        System.out.println("halloo");
+        reservation.setStatus(Status.PENDING);
         return reservationRepo.save(reservation);
     }
 
