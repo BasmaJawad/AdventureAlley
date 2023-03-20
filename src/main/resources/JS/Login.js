@@ -2,10 +2,12 @@
 document.querySelector("#login-link").
 addEventListener("click", function()
 {document.querySelector(".popup").classList.add("active");
+    document.querySelector(".overlay").classList.add("overlayBackground")
 });
 
 document.querySelector(".popup .close-btn").addEventListener("click", function()
 {document.querySelector(".popup").classList.remove("active");
+    document.querySelector(".overlay").classList.remove("overlayBackground")
 });
 
 let storedCustomer;
@@ -50,6 +52,8 @@ function compareUserInput(){
 
         // lukker popup vinduet
         document.querySelector(".popup").classList.remove("active")
+
+
 
         // Denne funktion kommer fra js/reservation.js
         showLoggedCustomer()

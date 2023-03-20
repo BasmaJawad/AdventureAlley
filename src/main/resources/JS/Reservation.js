@@ -78,6 +78,7 @@ function selectTime(element, activityTimes) {
     //selectedTime er en hidden input i html, som nu får en hel aktivitet som value
     //VIRKER IKKE
    // document.getElementById("selectedTime").value = activityTimes;
+
     chosenActivity = activityTimes;
 
     console.log(chosenActivity)
@@ -154,6 +155,7 @@ function calculatePrice() {
     priceDiv.innerHTML = "Pris: <br>" + totalPrice + " kr."
 
 }
+
 async function postReservation(event) {
 
     event.preventDefault()
@@ -170,8 +172,10 @@ async function postReservation(event) {
         "activity": chosenActivity,
         "customer": customer
     }
+
     console.log(reservation)
     reservation = JSON.stringify(reservation)
+
 
     const postToDB = {
         method: "POST",
@@ -186,6 +190,11 @@ async function postReservation(event) {
 
     if(!fetchData.ok){
         console.log("Det gik ikke godt med poste reservation");
+    }
+    else{
+        localStorage.setItem("reservation", reservation)
+        localStorage.setItem("activity", JSON.stringify(chosenActivity))
+        window.location.href = "confirmation.html"
     }
 
     return fetchData.json();
