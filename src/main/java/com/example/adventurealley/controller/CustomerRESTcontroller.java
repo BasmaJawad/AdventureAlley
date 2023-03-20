@@ -75,4 +75,10 @@ public class CustomerRESTcontroller {
             return reservationRepo.findReservationByDate(date);
 
     }
+
+    @GetMapping("/customerReservations/{email}")
+    public List<Reservation> customerReservations(@PathVariable String email){
+        return reservationRepo.findReservationByCustomerEmail(email);
+
+    }
 }
