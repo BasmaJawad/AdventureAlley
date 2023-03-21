@@ -2,12 +2,14 @@
 document.querySelector("#login-link").
 addEventListener("click", function()
 {document.querySelector(".popup").classList.add("active");
-    document.querySelector(".overlay").classList.add("overlayBackground")
+    document.querySelector(".overlay").classList.add("overlayBackground");
+    console.log("hej 1")
 });
 
 document.querySelector(".popup .close-btn").addEventListener("click", function()
 {document.querySelector(".popup").classList.remove("active");
-    document.querySelector(".overlay").classList.remove("overlayBackground")
+    document.querySelector(".overlay").classList.remove("overlayBackground");
+    navbar()
 });
 
 let storedCustomer;
@@ -53,7 +55,6 @@ function compareUserInput(){
         // lukker popup vinduet
         document.querySelector(".popup").classList.remove("active")
         document.querySelector(".overlay").classList.remove("overlayBackground")
-
 
         // Denne funktion kommer fra js/reservation.js
         showLoggedCustomer()

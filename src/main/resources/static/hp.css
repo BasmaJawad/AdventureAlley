@@ -24,7 +24,7 @@
     position: absolute;
     left: -100px;
     top: 900px;
-    opacity: 0.5;
+    opacity: 0.4;
     width: 100%;
     z-index: -1;
 }
@@ -112,7 +112,9 @@ h1{
     height: 300px;
     float: left;
     object-fit: cover;
-    border: 1px solid white;
+    /*border: 1px solid white;
+
+     */
 }
 
 

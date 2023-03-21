@@ -1,8 +1,12 @@
 package com.example.adventurealley.controller;
 
 
+import com.example.adventurealley.model.Customer;
+import com.example.adventurealley.model.Enums.Status;
 import com.example.adventurealley.model.Enums.UserType;
+import com.example.adventurealley.model.Reservation;
 import com.example.adventurealley.model.User;
+import com.example.adventurealley.repository.ReservationRepo;
 import com.example.adventurealley.repository.UserRepo;
 import com.example.adventurealley.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +23,9 @@ public class UserRESTcontroller {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    ReservationRepo reservationRepo;
 
     @Autowired
     UserRepo userRepo;
@@ -38,7 +45,6 @@ public class UserRESTcontroller {
         //userService.getUser();
         return null;
     }
-
     @PostMapping("/Admin")
     @ResponseStatus(HttpStatus.CREATED)
     public User postUser(@RequestBody User user) {
@@ -64,6 +70,24 @@ public class UserRESTcontroller {
     }
 
 
+    @GetMapping("/reservationsByStatus/{status}")
+    public List<Reservation> getReservationsByStatus(@PathVariable Status status){
+        return reservationRepo.findReservationByStatus(status);
+    }
 
+    @PutMapping("/updateReservationStatus/{status}/{id}")
+    public ResponseEntity<Reservation> confirmReservation(@PathVariable Status status, @PathVariable int id, @RequestBody Reservation reservation){
+        Optional<Reservation> reservationOptional = reservationRepo.findById(id);
+
+        if (reservationOptional.isPresent()) {
+            reservation.setStatus(status);
+            reservationRepo.save(reservation);
+            return new ResponseEntity<>(reservation,HttpStatus.OK);
+
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+    }
 
 }
