@@ -2,10 +2,8 @@ package com.example.adventurealley.controller;
 
 
 import com.example.adventurealley.model.Customer;
-import com.example.adventurealley.model.Enums.Status;
-import com.example.adventurealley.model.Reservation;
+import com.example.adventurealley.model.Enums.UserType;
 import com.example.adventurealley.model.User;
-import com.example.adventurealley.repository.ReservationRepo;
 import com.example.adventurealley.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,6 +23,9 @@ public class UserRESTcontroller {
     @Autowired
     ReservationRepo reservationRepo;
 
+    @Autowired
+    UserRepo userRepo;
+
     @GetMapping("/user")
     public List<User> getUsers() {
         return userService.getUsers();
@@ -40,6 +41,29 @@ public class UserRESTcontroller {
         //userService.getUser();
         return null;
     }
+    @PostMapping("/Admin")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User postUser(@RequestBody User user) {
+        System.out.println(user);
+        user.setUsertype(UserType.EMPLOYEE);
+        return userRepo.save(user);
+    }
+
+    @PutMapping("/user/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User user){
+
+        Optional<User> userOptional = userRepo.findById(id);
+
+        if (userOptional.isPresent()){
+            userRepo.save(user);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+
+        }
+
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
 
     @GetMapping("/reservationsByStatus/{status}")
     public List<Reservation> getReservationsByStatus(@PathVariable Status status){

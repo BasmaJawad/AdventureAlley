@@ -10,6 +10,7 @@ let users = []
 async function setup() {
     await actionFetchCustomers()
     UserLogin()
+
 }
 
 
@@ -22,14 +23,6 @@ async function actionFetchCustomers() {
     users = await fetchAny(UrlLogin);
 
 }
-
-/*
-users.forEach(user => {
-    const userType = user["usertype"]; // Accessing the enumType property
-    // Do something with the user data and userType
-});
-
- */
 
 console.log(users)
 
@@ -47,16 +40,23 @@ function UserLogin() {
     if (user) {
         console.log("User found")
 
+      localStorage.setItem("users", JSON.stringify(users)); //sætter newCustomer i local storage
+
+
         if (userType === "ADMIN") {
             window.location.href = "../templates/Admin.html"
-            console.log("Admin")
+            console.log("ADMIN")
+
         } else if (userType === "EMPLOYEE") {
-            console.log("Employee")
+            console.log("EMPLOYEE")
             window.location.href = "../templates/Employee.html"
+
         }
     } else
         console.log("User not found")
 
 }
+///// Create user
+
 
 

@@ -2,9 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="../static/admin.css">
+    <title>Admin</title>
+
+
 </head>
+<script src="https://kit.fontawesome.com/26b6925bcb.js" crossorigin="anonymous"></script>
 <body>
 
+
+<div>
+    <nav class="sidebar">
+
+        <a href="#" class="brand">
+            <h1> Oversigt</h1>
+        </a>
+        <ul>
+            <li>
+                <a href=#popupUser" id="u-Link">
+                    <i class="brugere"></i>
+                    <span> OPRET BRUGER </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class="reservationer"></i>
+                    <span> RESERVATIONER </span>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class="mail"></i>
+                    <span> UDSTYR </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <nav class="navbar">
+        <div class="header">
+
+        </div>
+        <div class="menu">
+            <li>
+                <a href="#" style="margin-left: 8px">Log ud</a>
+            </li>
+        </div>
+    </nav>
+    <div class="dash">
+        <div class="stats">
+            <h1 class="title">Brugere</h1>
+            <div class="overview">
+                <div class="panel">
+                    <div class="icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <table id ="userTable">
+                        <thead>
+                        <tr>
+                            <th>Brugernavn</th>
+                            <th>Type</th>
+                            <th>Handlinger</th>
+                        </tr>
+                        </thead>
+
+
+                        <tbody id="tableBody">
+
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+<div class="popupUser">
+    <div class="close-btn">&times;</div>
+
+    <form action="http://localhost:8080/Admin" method="post" id="CreateUser">
+
+        <h5>Opret</h5>
+
+
+        <div class="form-element">
+            <label for="username">Brugernavn</label>
+            <input type="text" id="username" name ="username"placeholder="Indtast brugernavn">
+        </div>
+
+
+        <div class="form-element">
+            <label for="password">Adgangskode</label>
+            <input type="password" id="password" name="password" placeholder="Indtast adgangskode">
+        </div>
+        <br>
+
+        <div class="form-element">
+            <button id="submitButton" class="button" type="submit" value="submit"> Gem</button>
+        </div>
+    </form>
+    </div>
+    <br>
+
+</div>
+
+<script src="../JS/Admin.js"></script>
+
+
 </body>
+
+
 </html>
