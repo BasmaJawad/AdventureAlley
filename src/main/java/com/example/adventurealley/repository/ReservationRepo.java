@@ -10,5 +10,5 @@ import java.util.List;
 public interface ReservationRepo extends JpaRepository<Reservation, Integer> {
 
     List<Reservation> findReservationByDate(String date);
-    List<Reservation> findReservationByCustomerEmail(String email);
+    List<Reservation> findReservationByCustomerEmailOrderByDateAsc(String email);
 }
