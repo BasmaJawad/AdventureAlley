@@ -1,12 +1,14 @@
-const loggetCustomer = JSON.parse(localStorage.getItem("customer"));
+const loggedCustomer = JSON.parse(localStorage.getItem("customer"));
 let customerReservations = [];
-console.log(loggetCustomer)
+console.log(loggedCustomer)
 async function fetchCustomerReservation(){
     let urlGetCustomerReservations = "http://localhost:8080/customerReservations/";
-    urlGetCustomerReservations += loggetCustomer["email"];
+    urlGetCustomerReservations += loggedCustomer["email"];
     customerReservations = await fetchAny(urlGetCustomerReservations);
 
-    console.log(customerReservations)
+    if(customerReservations.length>0){
+        displayReservations()
+    }
 }
 
 function fetchAny(url) {
@@ -15,3 +17,9 @@ function fetchAny(url) {
 }
 
 fetchCustomerReservation()
+
+function displayReservations(){
+
+
+
+}

@@ -52,7 +52,7 @@ function compareUserInput(){
 
         // lukker popup vinduet
         document.querySelector(".popup").classList.remove("active")
-
+        document.querySelector(".overlay").classList.remove("overlayBackground")
 
 
         // Denne funktion kommer fra js/reservation.js

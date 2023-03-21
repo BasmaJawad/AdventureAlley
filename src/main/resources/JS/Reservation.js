@@ -74,10 +74,11 @@ function displayTimes(activity) {
 }
 
 let chosenActivity;
+
 function selectTime(element, activityTimes) {
     //selectedTime er en hidden input i html, som nu får en hel aktivitet som value
     //VIRKER IKKE
-   // document.getElementById("selectedTime").value = activityTimes;
+    // document.getElementById("selectedTime").value = activityTimes;
 
     chosenActivity = activityTimes;
 
@@ -137,7 +138,7 @@ async function showLoggedCustomer() {
         customerName.textContent = "Navn:  " + c["firstname"] + " " + c["lastname"]
         document.querySelector(".nextReservation").classList.remove("active");
         document.querySelector(".nextReservation2").classList.add("active");
-       await reservationButton.addEventListener("click", postReservation)
+        await reservationButton.addEventListener("click", postReservation)
 
     } else {
 
@@ -165,40 +166,42 @@ async function postReservation(event) {
     const postReservationUrl = "http://localhost:8080/paintballBooking";
     const customer = JSON.parse(localStorage.getItem("customer"))
 
-    let reservation = {
-        "price": totalPrice,
-        "participants": participants.value,
-        "date": dateInput.value,
-        "activity": chosenActivity,
-        "customer": customer
+    if (checkValue()) {
+
+
+        let reservation = {
+            "price": totalPrice,
+            "participants": participants.value,
+            "date": dateInput.value,
+            "activity": chosenActivity,
+            "customer": customer
+        }
+
+        console.log(reservation)
+        reservation = JSON.stringify(reservation)
+
+
+        const postToDB = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: reservation
+        }
+
+
+        const fetchData = await fetch(postReservationUrl, postToDB)
+
+        if (!fetchData.ok) {
+            console.log("Det gik ikke godt med poste reservation");
+        } else {
+            localStorage.setItem("reservation", reservation)
+            localStorage.setItem("activity", JSON.stringify(chosenActivity))
+            window.location.href = "confirmation.html"
+        }
+
+        return fetchData.json();
     }
-
-    console.log(reservation)
-    reservation = JSON.stringify(reservation)
-
-
-    const postToDB = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: reservation
-    }
-
-
-   const fetchData = await fetch(postReservationUrl, postToDB)
-
-    if(!fetchData.ok){
-        console.log("Det gik ikke godt med poste reservation");
-    }
-    else{
-        localStorage.setItem("reservation", reservation)
-        localStorage.setItem("activity", JSON.stringify(chosenActivity))
-        window.location.href = "confirmation.html"
-    }
-
-    return fetchData.json();
-
 
 }
 
@@ -209,6 +212,13 @@ function removeCustomer() {
     localStorage.removeItem('customer');
 }
 
+function checkValue() {
+    if (participants.value > 20 || participants.value < 10) {
+        alert("Du skal mellem 10-20 personer")
+        return false;
+    }
+    return true;
+}
 
 
 
