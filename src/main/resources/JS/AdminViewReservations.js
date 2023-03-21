@@ -8,8 +8,6 @@ async function fetchPendingReservations(){
         if (pendingReservations.length > 0) {
             pendingReservations.forEach(displayReservations)
         }
-
-
 }
 
 fetchPendingReservations()
@@ -38,23 +36,25 @@ function displayReservations(reservation, index){
     confirmReservationBtn.addEventListener('click', () => confirmReservation(reservation));
 }
 
-function confirmReservation(reservation){
+async function confirmReservation(reservation){
 
     console.log(reservation["reservationID"])
     const reservationId = reservation["reservationID"];
 
     let url = "http://localhost:8080/updateReservationStatus/PAYED/" + reservationId;
-    fetch(url, {
+
+    const putRequest = {
         method: 'PUT',
         body: JSON.stringify(reservation),
         headers: {
             'Content-Type': 'application/json'
-        }
-    }).then((response) => {
-        if (!response.ok) {
+        }}
+
+    const fetchData = await fetch(url,putRequest)
+
+        if (!fetchData.ok) {
             console.log("Det gik ikke godt med update");
-        };
-    })
+        }
 }
 
 
