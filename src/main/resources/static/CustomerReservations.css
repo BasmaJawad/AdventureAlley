@@ -1,3 +1,38 @@
-body{
-    background-color: #161641;
+#reservationCard{
+    margin: 50px;
+}
+
+#cardPic{
+    float: right;
+    width: 180px;
+}
+#reservationCard p {
+    font-family: Haettenschweiler, sans-serif;
+    width: 350px;
+    float: left;
+    margin: 20px;
+    padding: 25px;
+    background: linear-gradient(to right, #5a15a9, #151534);
+    line-height: 25px;
+}
+
+
+#reservationCard p span {
+    font-family: "Bauhaus 93";
+    font-size: 30px;
+}
+
+h1 {
+    margin: 100px;
+    font-size: 50px;
+}
+
+#background img{
+    z-index: -1;
+    position: absolute;
+    top: -70px;
+    left: -500px;
+    width: 1300px;
+    height: 700px;
+    opacity: 0.6;
 }

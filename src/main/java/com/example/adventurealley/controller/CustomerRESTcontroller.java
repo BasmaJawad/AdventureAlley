@@ -78,7 +78,7 @@ public class CustomerRESTcontroller {
 
     @GetMapping("/customerReservations/{email}")
     public List<Reservation> customerReservations(@PathVariable String email){
-        return reservationRepo.findReservationByCustomerEmail(email);
+        return reservationRepo.findReservationByCustomerEmailOrderByDateAsc(email);
 
     }
 }
