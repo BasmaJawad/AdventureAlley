@@ -1,0 +1,156 @@
+body{
+    font-family: Futura;
+    background-color: #d1dfe8;
+    margin:0;
+    min-height: 100vh;
+    background: var(--secondary);
+    color: var(--text-default);
+    display: grid;
+    grid-template-columns: 16em auto ;
+    transition: 0.3s ease ease-in-out;
+}
+:root{
+    --accent: #112d36;
+    --primary: #fff;
+    --secondary: #f5f7fc;
+    --text-default: #000;
+    --text-primary: #1d1933;
+    --text-secondary: #1a086e;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+ul{
+    list-style:  none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+
+p {
+    color: var(--text-primary);
+    font-size: 0.9em;
+    line-height: 25px;
+}
+
+.sidebar{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    padding: 2em;
+    width: 16em;
+    overflow-y: scroll;
+}
+
+.sidebar ul:not(.mail){
+    margin: 2em 0 5em 0;
+}
+.sidebar ul i {
+    color: #0b1f25;
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+.sidebar ul li {
+    margin-right: 0.5em;
+}
+
+.sidebar ul a {
+    padding: 0.7em;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.sidebar ul a:hover{
+    background: var(--accent);
+    color:#fff;
+}
+.sidebar ul li:hover i {
+    color:#fff;
+}
+
+main{
+    padding: 2em;
+}
+
+.panel{
+    background: var(--primary);
+    border-radius: 0.8em;
+    transistion: 0.3s ease-in-out;
+    margin-top:20px ;
+    display: flex;
+    align-items: center;
+}
+
+.navbar , .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+-navbar ul li{
+    display: inline-block;
+    margin:0 0.5em;
+}
+
+.navbar .fas {
+    cursor: pointer;
+}
+
+.dash .panel {
+    padding: 1em;
+}
+
+.title{
+    margin: 1.3em 0 0.5em 0;
+}
+
+.panel .icon{
+
+    background: var(--secondary);
+    font-size: 1.3em;
+    color: var(--accent);
+    margin-right: 1em;
+    height: 2.8em;
+    width: 2.8em;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel h2{
+    margin-bottom:0.2em;
+}
+
+.menu{
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    color: white;
+
+}
+
+.menu a:hover{
+    background: var(--accent);
+    color:#fff;
+    border-radius: 20px;
+
+
+}
+
+
+
+

@@ -2,9 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="../static/admin.css">
+    <title>Admin</title>
+
 </head>
+<script src="https://kit.fontawesome.com/26b6925bcb.js" crossorigin="anonymous"></script>
 <body>
 
+
+
+<div>
+    <nav class = "sidebar">
+
+        <a href = "#" class = "brand">
+            <h1> Oversigt</h1>
+        </a>
+        <ul>
+            <li>
+                <a href="#popupUser">
+                    <i class = "brugere"></i>
+                    <span> BRUGERE </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class = "reservationer"></i>
+                    <span> RESERVATIONER </span>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class = "mail"></i>
+                    <span> MAIL </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <nav class = "navbar">
+        <div class = "header">
+
+        </div>
+        <div class = "menu">
+            <li>
+                <a href="#" style="margin-left: 8px">Log ud</a>
+            </li>
+        </div>
+    </nav>
+    <div class = "dash">
+        <div class = "stats">
+            <h1 class = "title">Brugere</h1>
+            <div class = "overview">
+            <div class ="panel">
+                <div>
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+              </div>
+                <h2>Adminstere brugere</h2>
+            </div>
+            </div>
+        </div>
+        <div class = "panel">
+            <div>
+                <div class = "icon">
+                    <i class ="fas fa-user"></i>
+                </div>
+            </div>
+            <div>
+            <h2>Opret bruger</h2>
+
+            </div>
+        </div>
+        <div class = "panel">
+            <div>
+                <div class ="icon">
+                    <i class = "fas fa-comment-dots"></i>
+                </div>
+            </div>
+            <div>
+                <h2>Udstyr</h2>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<div class="popupUser" id="popupUser"><div class="popup">
+    <form action="http://localhost:8080/Admin" method="post" id="CreateUser">
+        <h2>Opret Bruger</h2>
+
+        <div class="form-element">
+            <label for="username"style="color:white";>username:</label>
+            <input type="text" id="username" name="username" placeholder="Indtast brugernavn"><br>
+        </div>
+
+        <div class="form-element">
+            <label for="password"style="color:white";>Adgangskode</label>
+            <input type="password" id="password" placeholder="Indtast adgangskode">
+        </div>
+
+        <div class="element">
+            <button id="submitButton" class="button" type = "submit" value ="submit" > Sign in </button>
+        </div>
+    </form>
+
+
+
+
+</div>
+
+
+
+<script> src="../JS/UserLogin.js"</script>
+<script> src="../JS/Admin.js"</script>
+
 </body>
+
+
 </html>

@@ -10,6 +10,7 @@ let users = []
 async function setup() {
     await actionFetchCustomers()
     UserLogin()
+
 }
 
 
@@ -48,14 +49,28 @@ function UserLogin() {
 
         if (userType === "ADMIN") {
             window.location.href = "../templates/Admin.html"
-            console.log("Admin")
+            console.log("ADMIN")
+
         } else if (userType === "EMPLOYEE") {
-            console.log("Employee")
+            console.log("EMPLOYEE")
             window.location.href = "../templates/Employee.html"
+
         }
     } else
         console.log("User not found")
 
+}
+
+function showUser(){
+    let u = localStorage.getItem("username")
+    console.log(u)
+    u = JSON.parse(u)
+    if (u != undefined){
+        const userName = document.getElementById("username")
+        userName.textContent = u["username"]
+    } else {
+    console.log("ingen er logget ind")
+    }
 }
 
 
