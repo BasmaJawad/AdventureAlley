@@ -34,7 +34,8 @@ users.forEach(user => {
 
 console.log(users)
 
-
+// Verficerer om brugeren er i databasen
+// Hvis brugeren er i databasen, så bliver brugeren sendt videre til den rigtige side
 function UserLogin() {
 
     const username = document.getElementById("username").value

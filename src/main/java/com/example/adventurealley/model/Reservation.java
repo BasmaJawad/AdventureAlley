@@ -20,7 +20,6 @@ public class Reservation {
     // private String email;
     // private int activityId;
     private String date;
-
     private int participants;
     private Status status;
     private double price;
