@@ -24,14 +24,6 @@ async function actionFetchCustomers() {
 
 }
 
-/*
-users.forEach(user => {
-    const userType = user["usertype"]; // Accessing the enumType property
-    // Do something with the user data and userType
-});
-
- */
-
 console.log(users)
 
 // Verficerer om brugeren er i databasen
@@ -48,6 +40,9 @@ function UserLogin() {
     if (user) {
         console.log("User found")
 
+      localStorage.setItem("users", JSON.stringify(users)); //sætter newCustomer i local storage
+
+
         if (userType === "ADMIN") {
             window.location.href = "../templates/Admin.html"
             console.log("ADMIN")
@@ -61,17 +56,7 @@ function UserLogin() {
         console.log("User not found")
 
 }
+///// Create user
 
-function showUser(){
-    let u = localStorage.getItem("username")
-    console.log(u)
-    u = JSON.parse(u)
-    if (u != undefined){
-        const userName = document.getElementById("username")
-        userName.textContent = u["username"]
-    } else {
-    console.log("ingen er logget ind")
-    }
-}
 
 
