@@ -14,16 +14,18 @@
     <div class="wrapper">
         <img id="logo" src="../static/images/logohvid.png"/>
         <nav>
-            <ul>
-                <li><a href="hp.html">HJEM</a></li>
-                <li><a href="#">AKTIVITETER</a></li>
-                <li><a href="#">LOGIN</a></li>
-                <li><a id="logout" href="hp.html">LOG UD</a></li>
-                <li></li>
+            <ul id="navbarWrapper">
+                <li><a href='hp.html'>HJEM</a></li>
+                <li><a href='CustomerReservations.html'>MINE RESERVATIONER</a></li>
+                <li><a href='#'>LOG IND</a></li>
+                <li><a id='logout' href='hp.html'>LOG UD</a></li>
+
+
             </ul>
         </nav>
     </div>
 </header>
+
 <div id="background">
     <img id="man" src="../static/images/man.png"/>
 
@@ -114,7 +116,6 @@
                 <input type="password" id="password" placeholder="Indtast adgangskode">
             </div>
 
-
             <div class="form-element">
                 <button class="form-element" id="submitButton" type="submit" value="submit"> Log ind</button>
             </div>
@@ -127,6 +128,7 @@
 </div>
 <script src="../JS/Reservation.js"></script>
 <script src="../JS/Login.js"></script>
+
 
 </body>
 </html>

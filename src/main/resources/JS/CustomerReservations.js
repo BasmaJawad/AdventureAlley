@@ -3,13 +3,24 @@ let customerReservations = [];
 
 
 async function fetchCustomerReservation(){
-    let urlGetCustomerReservations = "http://localhost:8080/customerReservations/";
-    urlGetCustomerReservations += loggedCustomer["email"];
-    customerReservations = await fetchAny(urlGetCustomerReservations);
+    if (loggedCustomer != null) {
+        let urlGetCustomerReservations = "http://localhost:8080/customerReservations/";
+        urlGetCustomerReservations += loggedCustomer["email"];
+        customerReservations = await fetchAny(urlGetCustomerReservations);
 
-    if(customerReservations.length>0){
-        customerReservations.forEach(displayReservations)
+        if (customerReservations.length > 0) {
+            customerReservations.forEach(displayReservations)
+        }
+    } else {
+
+        const d = document.createElement("p");
+        d.innerHTML = "Log ind for at se dine bookinger";
+        d.classList.add("noReservations");
+
+        document.body.appendChild(d);
     }
+
+
 }
 
 function fetchAny(url) {

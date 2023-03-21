@@ -36,3 +36,9 @@ h1 {
     height: 700px;
     opacity: 0.6;
 }
+
+.noReservations{
+    font-family: Haettenschweiler, sans-serif;
+    margin: 100px;
+    font-size: 20px;
+}
