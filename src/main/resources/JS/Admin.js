@@ -86,43 +86,88 @@ function displayUser(user){
         "<td>" + user.username + "</td>" +
         "<td>" +  user["usertype"] +"</td>"+
         "<td>" +
-            "<button id ='edit-btn-${rowIndex}' class='edit-btn' >Rediger</button>" +
-            "<button class='delete-btn'>Slet</button>" +
+            "<button class='edit-btn' >Rediger</button>" +
+            "<button class='delete-btn' >Slet</button>" +
         "</td>"
+
+
+    const editBtn = tableBody.querySelector(".edit-btn");
+    editBtn.addEventListener("click", () => {
+        displayEditForm(user);
+    });
 
     table.appendChild(tableBody)
 
-
 }
-const editButton = document.querySelectorAll('.edit-btn');
-editButton.forEach((button) => {
-    button.addEventListener('click', () => {
-        const currentRow = button.parentNode.parentNode;
-        // TODO: implement editing logic
+
+function displayEditForm(user) {
+    // Display a form with the current user's information
+    const formContainer = document.getElementById("form-container");
+    const form = document.createElement("form");
+
+    form.innerHTML =
+        "<label for='username'>Brugernavn:</label>" +
+        "<input type='text' id='username' name='username' value='" +
+        user.username +
+        "'><br>" +
+        "<label for='usertype'>Brugertype:</label>" +
+        "<input type='text' id='usertype' name='usertype' value='" +
+        user["usertype"] +
+        "'><br>" +
+        "<button type='submit'>Gem ændringer</button>";
+
+    // Attach a submit event listener to the form
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Update the user's information in the table
+        user.username = form.querySelector("#username").value;
+
+        user["usertype"] = form.querySelector("#usertype").value;
+
+        console.log("test " + user)
+
+        updateTableRow(user);
+
+        // Hide the form
+        formContainer.innerHTML = "";
     });
-});
 
-
-
-//UPDATE OG DELETE
-
-//henter knapperne i en metode som skal blive læst EFTER at buttons er created i displayUSer
-
-function getBtns(){
-    editBtn= document.querySelector(".edit-btn")
-    deleteBtn = document.querySelector(".delete-btn")
+    formContainer.innerHTML = "";
+    formContainer.appendChild(form);
 }
 
+function updateTableRow(user) {
+    console.log("test3" + user )
+    const table = document.getElementById("tableBody");
+    const tableRows = table.getElementsByTagName("tr");
 
-editBtn.addEventListener("click", updateUser)
+    for (let i = 0; i < tableRows.length; i++) {
+        const tableData = tableRows[i].getElementsByTagName("td");
+        if (tableData[0].textContent === user.username) {
+            tableData[1].textContent = user["usertype"];
+            break;
+        }
+    }
 
+    updateUser(user);
+
+}
+
+// Kalder på restUpdate og giver
 async function updateUser(user){
     const response = await restUpdateUser(user)
     console.log(response)
 }
 
+// Skal opdatere brugen til databasen
+
 async function restUpdateUser(user){
-    const url = "http://localhost:8080/user"
+    console.log("test34" + user.id)
+    console.log(JSON.stringify(user))
+    const url = "http://localhost:8080/user/" + user.id
+
+
     const fetchOptions ={
         method: "PUT",
         headers: {"content-type": "application/json"},
@@ -147,33 +192,6 @@ async function restUpdateUser(user){
 
 
 
-function displayUser2(user){
-    getBtns()
-
-    const table = document.getElementById("tableBody")
-    table.innerHTML.t = " "
-    const tableBody = document.createElement("tr")
-
-    tableBody.innerHTML =
-        "<td>" + "<input value='" + user.username + "'/>" + "</td>" +
-        "<td>" + "<input value='" + user["usertype"] + "'/>" + "</td>" +
-        "<td>" +
-        "<button class='edit-btn'>Rediger</button>" +
-        "<button class='delete-btn'>Slet</button>" +
-        "</td>"
-
-
-
-    table.appendChild(tableBody)
-
-
-
-    const editBtn = tableBody.querySelector(".edit-btn");
-    editBtn.addEventListener("click", () => updateUser(user));
-
-    const deleteBtn = tableBody.querySelector(".delete-btn");
-    //deleteBtn.addEventListener("click", () => deleteUser(user));
-}
 
 
 

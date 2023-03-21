@@ -51,8 +51,9 @@ public class UserRESTcontroller {
     public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User user){
 
         Optional<User> userOptional = userRepo.findById(id);
+        System.out.println(user);
 
-        if (userOptional.isPresent()){
+        if (userOptional.isPresent()){   System.out.println(user);
             userRepo.save(user);
             return new ResponseEntity<>(user, HttpStatus.OK);
 
