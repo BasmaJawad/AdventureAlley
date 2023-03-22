@@ -16,24 +16,41 @@ function fetchAny(url) {
     return fetch(url).then((response) => response.json())
 }
 function displayReservations(reservation, index){
-    const reservationDiv = document.getElementById("reservationDiv");
 
-    const reservationCard = document.createElement("div");
 
-    reservationCard.innerHTML =
-        "<span>" + reservation["activity"].name  + "</span>" + "<br>" +
-        reservation.date + "<br>" +
-        "Deltagere: " + reservation.participants + "<br>" +
-        "Pris: " + reservation.price + " kr." + "<br>" +
-        "Tid: " + reservation["activity"].startTime + "<br>" +
-        reservation.status + "<br>" +
-        "<button id='confirmReservation" + index + "' value='" + reservation +"'>Godkend booking</button>"
 
-    reservationDiv.appendChild(reservationCard);
+    const tablebody = document.getElementById("tableBody")
+    const tr = document.createElement("tr")
+    const getCustomer = reservation.customer
+    const getActivity = reservation["activity"]
+
+    tr.innerHTML =
+        "<td>" +  reservation["reservationID"] +"</td>"+
+        "<td>" + getCustomer.firstname + " " + getCustomer.lastname + "</td>" +
+        "<td>" +  getCustomer.email +"</td>"+
+        "<td>" +  getActivity.name +"</td>"+
+        "<td>" +  reservation.date +"</td>"+
+        "<td>" +  getActivity.startTime +"</td>"+
+        "<td>" +  reservation.status +"</td>"+
+        "<td>" +
+        "<button class='confirmRes' id='confirmReservation" + index + "' value='" + reservation +"'>Godkend</button>" +
+        "</td>"
+
+    tablebody.appendChild(tr);
 
     const confirmReservationBtn = document.getElementById("confirmReservation" + index);
 
-    confirmReservationBtn.addEventListener('click', () => confirmReservation(reservation));
+    confirmReservationBtn.addEventListener('click', () => {
+
+        const confirmed = confirm('Er du sikker at du vil godkende reservation ' + reservation["reservationID"] + '?');
+
+        if (confirmed) {
+            console.log("virker")
+            confirmReservation(reservation)
+
+        }
+
+    });
 }
 
 async function confirmReservation(reservation){
@@ -55,6 +72,7 @@ async function confirmReservation(reservation){
         if (!fetchData.ok) {
             console.log("Det gik ikke godt med update");
         }
+        else location.reload(); //reloader siden når reservation er godkendt
 }
 
 

@@ -30,8 +30,8 @@
     padding-top: 60px;
     background-color: rgba(42, 41, 41, 0.45);
     position: relative;
-    border: 3px solid #ffad42;
-   box-shadow: 0 0 20px rgb(255, 173, 66);
+    border: 1px solid #fb2678;
+   box-shadow: 0 0 30px #fb2678;
     height: 550px;
 }
 
@@ -69,7 +69,7 @@
     display: inline-block;
     width: 75px;
     height: 60px;
-    border: 1px solid #ffffff;
+    border: 1px solid #711b3a;
     margin: 7px;
     text-align: center;
     line-height: 50px;
@@ -79,7 +79,7 @@
 }
 
 .selected{
-    background-color: #6c1cc5;
+    background-color: #711b3a;
     color: white;
 }
 .nextReservation:hover{
@@ -87,7 +87,7 @@
     color: white;
 }
 h1 {
-    color: #ffad42;
+    color: #fb2678;
     font-size: 80px;
     margin-bottom: 0;
 }
@@ -99,7 +99,7 @@ h1 {
 }
 
 h2 {
-    color: #ffad42;
+    color: #f97a02;
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 10px;
@@ -136,8 +136,9 @@ h2 {
     font-family: "Bauhaus 93", sans-serif;
     font-size: 20px;
     margin-top: 0px;
-    background-color: #ffad42;
-    border-radius: 0px;
+    background-color: #f97a02;
+    border: none;
+    border-radius: 10px;
     width: auto;
     padding-left: 30px;
     padding-right: 30px;

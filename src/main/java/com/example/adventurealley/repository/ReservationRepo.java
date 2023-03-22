@@ -12,5 +12,5 @@ public interface ReservationRepo extends JpaRepository<Reservation, Integer> {
 
     List<Reservation> findReservationByDate(String date);
     List<Reservation> findReservationByCustomerEmailOrderByDateAsc(String email);
-    List<Reservation> findReservationByStatus(Status status);
+    List<Reservation> findReservationByStatusOrderByDateAsc(Status status);
 }

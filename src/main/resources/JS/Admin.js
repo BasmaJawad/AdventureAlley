@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', setup);
 
 let createUserForm;
 let users = JSON.parse(localStorage.getItem("users"));
+
 window.onload = users.forEach(displayUser)
+
 function setup(){
     createUserForm = document.getElementById("CreateUser");
     createUserForm.addEventListener("submit",submitData);

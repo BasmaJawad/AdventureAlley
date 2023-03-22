@@ -72,7 +72,7 @@ public class UserRESTcontroller {
 
     @GetMapping("/reservationsByStatus/{status}")
     public List<Reservation> getReservationsByStatus(@PathVariable Status status){
-        return reservationRepo.findReservationByStatus(status);
+        return reservationRepo.findReservationByStatusOrderByDateAsc(status);
     }
 
     @PutMapping("/updateReservationStatus/{status}/{id}")

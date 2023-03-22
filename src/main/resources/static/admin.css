@@ -10,9 +10,9 @@ body{
     transition: 0.3s ease ease-in-out;
 }
 :root{
-    --accent: #112d36; /* hover farve*/
+    --accent: rgb(77, 115, 128); /* hover farve*/
     --primary: #fff;/* panel farve*/
-    --secondary: #f5f7fc;/* baggrund farve*/
+    --secondary: #485a88;/* baggrund farve*/
     --text-default: #000;/* tekst panel farve*/
     --text-primary: #1d1933;/* tekst oversigt farve*/
     --text-secondary: #1a086e;
