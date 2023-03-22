@@ -3,30 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <title>Reservations</title>
-    <link rel="stylesheet" href="../static/navbar.css">
+    <link rel="stylesheet" href="../static/AdminViewReservations.css">
 
 </head>
 <body>
 
-<header>
-    <div class="wrapper">
-        <img id="logo" src="../static/images/logohvid.png"/>
-        <nav>
-            <ul>
-                <li><a href="hp.html">HJEM</a></li>
-                <li><a href="hp.html">BOOKING</a></li>
-                <li><a href="hp.html">LOG IND</a></li>
-                <li></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 
-<script src="../JS/AdminViewReservations.js"></script>
+<div>
+    <nav class="sidebar">
 
+        <a href="#" class="brand">
+            <h1> Oversigt</h1>
+        </a>
+        <ul>
+            <li>
+                <a href=#popupUser" id="u-Link">
+                    <i class="brugere"></i>
+                    <span> OPRET BRUGER </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class="reservationer"></i>
+                    <span> RESERVATIONER </span>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class="mail"></i>
+                    <span> UDSTYR </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+<div id="reservationDivWrapper">
+
+    <h1>
+        Reservationer - <br> Afventer godkendelse
+    </h1>
 
 <div id="reservationDiv">
 
+
 </div>
+</div>
+
+<div class="popupUser">
+    <div class="close-btn">&times;</div>
+
+    <form action="http://localhost:8080/Admin" method="post" id="CreateUser">
+
+        <h5>Opret</h5>
+
+
+        <div class="form-element">
+            <label for="username">Brugernavn</label>
+            <input type="text" id="username" name ="username"placeholder="Indtast brugernavn">
+        </div>
+
+
+        <div class="form-element">
+            <label for="password">Adgangskode</label>
+            <input type="password" id="password" name="password" placeholder="Indtast adgangskode">
+        </div>
+        <br>
+
+        <div class="form-element">
+            <button id="submitButton" class="button" type="submit" value="submit"> Gem</button>
+        </div>
+    </form>
+</div>
+<br>
+
+</div>
+
+<script src="../JS/AdminViewReservations.js"></script>
+
+<script src="../JS/Admin.js"></script>
 </body>
 </html>

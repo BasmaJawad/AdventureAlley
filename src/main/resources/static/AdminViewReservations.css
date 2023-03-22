@@ -1,0 +1,176 @@
+body{
+    font-family: Futura;
+    margin:0;
+    min-height: 100vh;
+    background: var(--secondary);
+    color: var(--text-default);
+    display: grid;
+    grid-template-columns: 16em auto ;
+    transition: 0.3s ease ease-in-out;
+}
+:root{
+    --accent: #112d36; /* hover farve*/
+    --primary: #fff;/* panel farve*/
+    --secondary: #f5f7fc;/* baggrund farve*/
+    --text-default: #000;/* tekst panel farve*/
+    --text-primary: #1d1933;/* tekst oversigt farve*/
+    --text-secondary: #1a086e;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+ul{
+    list-style:  none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+
+p {
+    color: var(--text-primary);
+    font-size: 0.9em;
+    line-height: 25px;
+}
+
+.sidebar{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    padding: 3em;
+    width: 16em;
+    overflow-y: scroll;
+}
+
+.sidebar ul:not(.mail){
+    margin: 2em 0 5em 0;
+}
+.sidebar ul i {
+    color: #0b1f25;
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+.sidebar ul li {
+    margin-right: 0.5em;
+}
+
+.sidebar ul a {
+    padding: 0.7em;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.sidebar ul a:hover{
+    background: var(--accent);
+    color:#fff;
+}
+.sidebar ul li:hover i {
+    color:#fff;
+}
+
+
+.navbar , .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popupUser{
+    position: absolute;
+    height: 400px;
+    top: -150%;
+    left: 50%;
+    opacity:0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width:380px;
+    padding:20px 30px;
+    background: linear-gradient(to right, #8ea3c4, #a9bfc2);
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    transistion:top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 200ms,
+    transform 20ms ease-in-out 200ms;
+
+}
+.popupUser.active{
+    top:50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transistion:top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 200ms,
+    transform 20ms ease-in-out 200ms;
+}
+
+.popupUser .close-btn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:17px;
+    height:18px;
+    background:#eee;
+    text-align:center;
+    line-height:15px;
+    border-radius:15px;
+    cursor: pointer;
+}
+.popupUser .form h5{
+    text-align: center;
+    color:black;
+    margin:10px 0px 20px;
+    font-size:25px;
+}
+.popupUser .form . form-element {
+    margin: 15px 0px;
+}
+
+.popupUser .form .form-element label{
+    font-size:14px;
+    color:black;
+    padding-top: 5px;
+}
+
+.popupUser .form-element input[type="text"],
+.popupUser .form-element input[type="password"]{
+    margin-top:5px;
+    margin-bottom:10px;
+    display: block;
+    width:100%;
+    padding: 10px;
+    outline:none;
+    border-radius:5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+}
+#reservationDivWrapper{
+    float: right;
+    margin-top: 100px;
+    width: 800px;
+    background-color: var(--secondary);
+}
+
+
+#reservationDiv{
+    padding: 30px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 10px;
+
+}
+
+
+
+
+
