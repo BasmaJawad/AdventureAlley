@@ -79,10 +79,15 @@ async function postFormData(url, formData) {
 
 
 function displayUser(user){
+
     console.log("display User" + user.username)
+
 
     const table = document.getElementById("tableBody")
     const tableBody = document.createElement("tr")
+
+    //LÆs op på setAttribute
+    tableBody.setAttribute("data-userid", user.id);
 
     tableBody.innerHTML =
         "<td>" + user.username + "</td>" +
@@ -96,6 +101,7 @@ function displayUser(user){
     const editBtn = tableBody.querySelector(".edit-btn");
     editBtn.addEventListener("click", () => {
         displayEditForm(user);
+
     });
 
     const deleteBtn = tableBody.querySelector(".delete-btn");
@@ -225,6 +231,11 @@ async function restDeleteUser(user) {
     if (!response.ok){
         console.log("failed to delete")
     }
+    const table = document.getElementById("tableBody");
+    //LÆS OP PÅ hva enden følgende linje er
+    const row = table.querySelector(`tr[data-userid="${user.id}"]`);
+    table.removeChild(row);
+
     return response
 
 }

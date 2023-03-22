@@ -8,7 +8,7 @@ const UrlLogin = "http://localhost:8080/UserLogin"
 let users = []
 
 async function setup() {
-    await actionFetchCustomers()
+    await actionFetchUsers()
     UserLogin()
 
 }
@@ -19,10 +19,12 @@ function fetchAny(url) {
     return fetch(url).then((response) => response.json())
 }
 
-async function actionFetchCustomers() {
+async function actionFetchUsers() {
     users = await fetchAny(UrlLogin);
-
+    localStorage.setItem("users", JSON.stringify(users));
 }
+
+
 
 console.log(users)
 
@@ -40,7 +42,6 @@ function UserLogin() {
     if (user) {
         console.log("User found")
 
-      localStorage.setItem("users", JSON.stringify(users)); //sætter newCustomer i local storage
 
 
         if (userType === "ADMIN") {
@@ -53,7 +54,7 @@ function UserLogin() {
 
         }
     } else
-        console.log("User not found")
+        alert("Forkert brugernavn eller adgangskode")
 
 }
 ///// Create user
