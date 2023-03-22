@@ -79,7 +79,7 @@
 }
 
 .selected{
-    background-color: #711b3a;
+    background: linear-gradient( to left, #711b3a,  #fb2678);
     color: white;
 }
 .nextReservation:hover{
