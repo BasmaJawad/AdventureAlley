@@ -12,7 +12,7 @@
     float: left;
     margin: 20px;
     padding: 25px;
-    background: linear-gradient(to right, #5a15a9, #151534);
+    background: linear-gradient(to right,  #e2690082, #5a15a9);
     line-height: 25px;
 }
 
@@ -31,10 +31,9 @@ h1 {
     z-index: -1;
     position: absolute;
     top: -70px;
-    left: -500px;
+    left: -300px;
     width: 1300px;
-    height: 700px;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .noReservations{

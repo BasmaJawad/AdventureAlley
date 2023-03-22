@@ -6,9 +6,7 @@
     top: 0px;
     float: right;
     z-index: -1;
-
 }
-
 
 #smudge{
     position: absolute;
@@ -23,11 +21,13 @@
 #smudge2{
 
     position: absolute;
-    left: -900px;
-    top: 700px;
-    opacity: 0.4;
+    left: -200px;
+    top: 800px;
+    opacity: 0.3;
     width: 120%;
     z-index: -1;
+
+
 }
 h1{
     font-size: 60px;
@@ -183,6 +183,14 @@ h1{
     background-color: rgba(0, 0, 0, 0.92);
 color: rgba(255, 255, 255, 0.92);
     padding: 100px;
+}
+
+footer {
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 

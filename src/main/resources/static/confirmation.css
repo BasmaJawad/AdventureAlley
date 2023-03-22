@@ -12,9 +12,11 @@
 
     position: absolute;
     left: -100px;
-    top: 50px;
-    opacity: 0.4;
+    top: 0px;
+    opacity: 0.3;
     width: 100%;
     z-index: -1;
+    height: 100%;
+    object-fit: cover;
 
 }

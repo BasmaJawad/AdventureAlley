@@ -58,7 +58,7 @@ async function confirmReservation(reservation){
     console.log(reservation["reservationID"])
     const reservationId = reservation["reservationID"];
 
-    let url = "http://localhost:8080/updateReservationStatus/PAYED/" + reservationId;
+    let url = "http://localhost:8080/updateReservationStatus/CONFIRMED/" + reservationId;
 
     const putRequest = {
         method: 'PUT',

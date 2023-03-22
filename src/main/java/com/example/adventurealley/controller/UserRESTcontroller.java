@@ -90,4 +90,20 @@ public class UserRESTcontroller {
 
     }
 
+    @DeleteMapping("/deleteUser/{id}")
+    public ResponseEntity<User> deleteUser(@PathVariable int id){
+        //finder brugere først
+        Optional<User> userOptional = userRepo.findById(id);
+
+        if (userOptional.isPresent()) {
+            userRepo.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+
 }

@@ -221,6 +221,10 @@ function checkValue() {
         alert("Du skal mellem 10-20 personer")
         return false;
     }
+    if (dateInput.value == ""){
+        alert("Du skal vælge en dato")
+        return false;
+    }
     return true;
 }
 

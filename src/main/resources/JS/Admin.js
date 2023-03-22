@@ -98,6 +98,11 @@ function displayUser(user){
         displayEditForm(user);
     });
 
+    const deleteBtn = tableBody.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", () => {
+        restDeleteUser(user);
+    });
+
     table.appendChild(tableBody)
 
 }
@@ -156,6 +161,8 @@ function updateTableRow(user) {
     const table = document.getElementById("tableBody");
     const tableRows = table.getElementsByTagName("tr");
 
+    //opdater tabel på siden med det samme
+
     for (let i = 0; i < tableRows.length; i++) {
         const tableData = tableRows[i].getElementsByTagName("td");
         if (tableData[0].textContent === user.username) {
@@ -177,8 +184,7 @@ async function updateUser(user){
 // Skal opdatere brugen til databasen
 
 async function restUpdateUser(user){
-    console.log("test34" + user.id)
-    console.log(JSON.stringify(user))
+
     const url = "http://localhost:8080/user/" + user.id
 
 
@@ -197,6 +203,27 @@ async function restUpdateUser(user){
 
     if (!response.ok){
         console.log("failed to update")
+    }
+    return response
+}
+
+async function restDeleteUser(user) {
+
+    const url = "http://localhost:8080/deleteUser/" + user.id
+    //opdater tabel på siden med det samme
+
+    const deleteUser ={
+        method: "DELETE",
+        headers: {"content-type": "application/json"},
+        body: ""
+    }
+    const userAsString = JSON.stringify(user)
+    deleteUser.body = userAsString
+
+    const response = await fetch(url, deleteUser)
+
+    if (!response.ok){
+        console.log("failed to delete")
     }
     return response
 
