@@ -8,6 +8,9 @@ document.querySelector(".popupUser .close-btn").addEventListener("click", functi
 {document.querySelector(".popupUser").classList.remove("active");
 });
 
+
+
+
 document.addEventListener('DOMContentLoaded', setup);
 
 let createUserForm;
@@ -73,9 +76,6 @@ async function postFormData(url, formData) {
 }
 
 
-
-let editBtn;
-let deleteBtn;
 function displayUser(user){
     console.log("display User" + user.username)
 
@@ -101,7 +101,7 @@ function displayUser(user){
 }
 
 function displayEditForm(user) {
-    // Display a form with the current user's information
+    // Viser formen med den valgte brugers information
     const formContainer = document.getElementById("form-container");
     const form = document.createElement("form");
 
@@ -111,16 +111,21 @@ function displayEditForm(user) {
         user.username +
         "'><br>" +
         "<label for='usertype'>Brugertype:</label>" +
-        "<input type='text' id='usertype' name='usertype' value='" +
-        user["usertype"] +
-        "'><br>" +
-        "<button type='submit'>Gem ændringer</button>";
+        "<select id='usertype' name='usertype'>" +
+        "<option value='ADMIN'" + (user["usertype"] === "ADMIN" ? " selected" : "") + ">ADMIN</option>" +
+        "<option value='EMPLOYEE'" + (user["usertype"] === "EMPLOYEE" ? " selected" : "") + ">EMPLOYEE</option>" +
+        "</select><br>" +
+        "<button type ='submit' id = 'submitFormB' >Gem ændringer</button>" +
+        "<button class='close-btn'>Annuller</button>";
 
-    // Attach a submit event listener to the form
+    // Viser form
+    formContainer.style.display = "block";
+
+    // Tilføjer 'submit' en event
     form.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        // Update the user's information in the table
+   // Opdaterer brugerens info på tabellen
         user.username = form.querySelector("#username").value;
 
         user["usertype"] = form.querySelector("#usertype").value;
@@ -129,8 +134,16 @@ function displayEditForm(user) {
 
         updateTableRow(user);
 
-        // Hide the form
-        formContainer.innerHTML = "";
+    // Skjuler form
+    formContainer.style.display = "none";
+});
+
+    // Lukker formen når man trykker op close (click event)
+    const closeBtn = form.querySelector(".close-btn");
+    closeBtn.addEventListener("click", () => {
+
+    //Skjuler formen uden at lave ændringer
+    formContainer.style.display = "none";
     });
 
     formContainer.innerHTML = "";
@@ -138,7 +151,6 @@ function displayEditForm(user) {
 }
 
 function updateTableRow(user) {
-    console.log("test3" + user )
     const table = document.getElementById("tableBody");
     const tableRows = table.getElementsByTagName("tr");
 
