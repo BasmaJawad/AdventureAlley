@@ -155,7 +155,11 @@ main{
 
 h5{
     color: black;
-    margin-left: 130px ;
+    margin-left: 120px ;
+    font-size:30px;
+    position: relative;
+    margin-bottom: 20px;
+
 }
 
 .popupUser{
@@ -167,7 +171,7 @@ h5{
     transform: translate(-50%, -50%) scale(1.25);
     width:380px;
     padding:20px 30px;
-    background: linear-gradient(to right, #8ea3c4, #a9bfc2);
+    background: linear-gradient(to right, #f5f7fc, #dde1e3);
     box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
     border-radius: 10px;
     transistion:top 0ms ease-in-out 200ms,
@@ -200,7 +204,7 @@ h5{
     text-align: center;
     color:black;
     margin:10px 0px 20px;
-    font-size:25px;
+
 }
 .popupUser .form . form-element {
     margin: 15px 0px;
@@ -222,14 +226,12 @@ h5{
     outline:none;
     border-radius:5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-
-
-
+    border:none;
 
 
 }
 
-. form-element button{
+#submitButton{
     width: 100%;
     height: 40px;
     border: none;
@@ -276,7 +278,7 @@ th {
 
 
 .delete-btn {
-    background-color: #f44336;
+    background-color: #e52c1e;
     color: white;
     padding: 6px 12px;
     border: none;
@@ -293,6 +295,64 @@ th {
 
 
 
+#form-container {
+    top: 5px;
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    height: 300px;
+}
+
+#form-container{
+    display: none;
+}
+
+
+
+#form-container .close-btn {
+    margin-top:10px;
+    background-color: var(--accent);
+    border-radius: 20px;
+    color:white;
+    width: 100%;
+    border: none;
+    height: 30px;
+}
+#submitFormB{
+    margin-top:20px;
+    background-color: var(--accent);
+    border-radius: 20px;
+    color:white;
+    width: 100%;
+    border: none;
+    height: 30px;
+}
+
+
+
+#form-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#form-container input[type="text"] {
+    position: center;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid black;}
+
+
+#form-container select {
+    position: center;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid black;}
 
 
 
