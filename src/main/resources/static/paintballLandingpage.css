@@ -51,10 +51,10 @@
 }
 
 #AvailableTimes {
-    width: 630px;
+    width: 600px;
     float: right;
     position: absolute;
-    top: 205px;
+    top: 175px;
     left: 450px;
     text-align: left;
 }
@@ -67,14 +67,14 @@
 
 .timeDiv {
     display: inline-block;
-    width: 75px;
-    height: 60px;
+    width: 85px;
+    height: 65px;
     border: 1px solid #711b3a;
     margin: 7px;
     text-align: center;
     line-height: 50px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 18px;
     padding-top:10px;
 }
 
@@ -101,8 +101,8 @@ h1 {
 h2 {
     color: #f97a02;
     font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .resInput {
@@ -120,6 +120,7 @@ h2 {
 .nextReservation, .nextReservation2 {
     position: absolute;
     top: -150%;
+    /* tror det her kan slettes
     font-family: "Bauhaus 93", sans-serif;
     font-size: 20px;
     margin-top: 0px;
@@ -128,17 +129,19 @@ h2 {
     width: 120px;
     height: 50px;
     color: white;
+
+     */
     opacity: 0;
 }
 .nextReservation.active, .nextReservation2.active{
-    top: 560px;
+    top: 570px;
     left:1000px;
     font-family: "Bauhaus 93", sans-serif;
     font-size: 20px;
     margin-top: 0px;
     background-color: #f97a02;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     width: auto;
     padding-left: 30px;
     padding-right: 30px;
@@ -214,10 +217,14 @@ h2 {
 }
 
 #customerName{
+    position: absolute;
+    top: 40px;
+    left: 70px;
     font-family: Impact, sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     margin-right: 30px;
 margin-bottom: 50px;
+    letter-spacing: 1px;
 }
 
 #insideAvailableTimes{

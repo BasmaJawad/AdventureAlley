@@ -46,7 +46,8 @@ p {
     left:0;
     height: 100%;
     padding: 3em;
-    width: 16em;
+    width: 16.5em;
+    border-right: 3px solid #d7e3e7;
     overflow-y: scroll;
 }
 

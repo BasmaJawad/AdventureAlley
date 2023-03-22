@@ -135,7 +135,8 @@ async function showLoggedCustomer() {
     c = JSON.parse(c)
     if (c != undefined) {
         const customerName = document.getElementById("customerName")
-        customerName.textContent = "Navn:  " + c["firstname"] + " " + c["lastname"]
+        customerName.textContent = c["firstname"] + " " + c["lastname"]
+
         document.querySelector(".nextReservation").classList.remove("active");
         document.querySelector(".nextReservation2").classList.add("active");
         await reservationButton.addEventListener("click", postReservation)
@@ -153,7 +154,9 @@ function calculatePrice() {
     totalPrice = price * participants
 
     const priceDiv = document.getElementById("priceTotal")
-    priceDiv.innerHTML = "Pris: <br>" + totalPrice + " kr."
+    priceDiv.innerHTML = "Pris: <br>" +
+    "<input type='text' id='pris' name='priceTotal' " +
+        "class='resInput' value ='"+ totalPrice + " 'kr. readonly>"
 
 }
 
@@ -188,6 +191,7 @@ async function postReservation(event) {
             },
             body: reservation
         }
+
 
 
         const fetchData = await fetch(postReservationUrl, postToDB)
