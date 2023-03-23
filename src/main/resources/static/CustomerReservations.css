@@ -12,7 +12,9 @@
     float: left;
     margin: 20px;
     padding: 25px;
-    background: linear-gradient(to right, #5a15a9, #ffa864);
+    border: 1px solid  #e26900;
+    box-shadow: 0 0 30px #fc8d2d;
+    background: black;
     line-height: 25px;
 }
 

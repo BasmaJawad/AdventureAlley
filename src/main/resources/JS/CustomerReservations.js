@@ -35,9 +35,8 @@ function displayReservations(reservation){
     const reservationCard = document.getElementById("reservationCard");
 
     const reservationInfo = document.createElement("p");
-
     reservationInfo.innerHTML =
-        "<img id='cardPic' src=\"../static/images/womanPaint.png\">"+
+        "<img id='cardPic' src=\"../static/images/Billede2.png\">"+
         "<span>" + reservation["activity"].name  + "</span>" + "<br>" +
         reservation.date + "<br>" +
         "Deltagere: " + reservation.participants + "<br>" +
