@@ -22,7 +22,7 @@
 
     position: absolute;
     left: -200px;
-    top: 800px;
+    top: 750px;
     opacity: 0.3;
     width: 120%;
     z-index: -1;
@@ -116,9 +116,7 @@ h1{
     height: 300px;
     float: left;
     object-fit: cover;
-    /*border: 1px solid white;
 
-     */
 }
 
 
@@ -128,9 +126,7 @@ h1{
     margin-left: 80px;
 }
 
-#lasertag{
 
-}
 
 .clickPic {
     margin-right: 20px;
@@ -174,23 +170,6 @@ h1{
 
 .clickPic:hover a {
     color: #f3defc;
-}
-
-#bund{
-    margin-top:200px;
-    width: 100%;
-    height: 200px;
-    background-color: rgba(0, 0, 0, 0.92);
-color: rgba(255, 255, 255, 0.92);
-    padding: 100px;
-}
-
-footer {
-    color: white;
-    padding: 20px;
-    text-align: left;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .popup.active {

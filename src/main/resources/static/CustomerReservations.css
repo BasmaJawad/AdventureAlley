@@ -19,13 +19,14 @@
 }
 
 
-#reservationCard p span {
+.resName {
     font-family: "Bauhaus 93";
     font-size: 30px;
 }
 
 h1 {
     margin: 100px;
+    margin-bottom: 0px;
     font-size: 50px;
 }
 
@@ -42,4 +43,39 @@ h1 {
     font-family: Haettenschweiler, sans-serif;
     margin: 100px;
     font-size: 20px;
+}
+
+#customerName{
+    font-family: Impact, sans-serif;
+    width: 300px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+    height: 100px;
+    padding: 30px;
+}
+
+#customerName div{
+    float: left;
+    margin-right: 50px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+.status{
+    font-family: Impact, sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.pending{
+    color: #fc8d2d;
+}
+
+.confirmed{
+    color: #8931ee;
+}
+
+.cancelled{
+    color: #7a7979;
 }
