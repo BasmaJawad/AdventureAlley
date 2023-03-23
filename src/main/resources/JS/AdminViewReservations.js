@@ -34,11 +34,13 @@ function displayReservations(reservation, index){
         "<td>" +  reservation.status +"</td>"+
         "<td>" +
         "<button class='confirmRes' id='confirmReservation" + index + "' value='" + reservation +"'>Godkend</button>" +
+        "<button class='cancelRes' id='cancelReservation" + index + "' value='" + reservation +"'>Annuller</button>" +
         "</td>"
 
     tablebody.appendChild(tr);
 
     const confirmReservationBtn = document.getElementById("confirmReservation" + index);
+    const cancelReservationBtn = document.getElementById("cancelReservation" + index);
 
     confirmReservationBtn.addEventListener('click', () => {
 
@@ -51,6 +53,40 @@ function displayReservations(reservation, index){
         }
 
     });
+
+    cancelReservationBtn.addEventListener('click', () => {
+
+        const confirmed = confirm('Er du sikker at du vil annullere reservation ' + reservation["reservationID"] + '?');
+
+        if (confirmed) {
+            console.log("virker")
+            cancelReservation(reservation)
+
+        }
+
+    });
+}
+
+async function cancelReservation(reservation){
+
+    console.log(reservation["reservationID"])
+    const reservationId = reservation["reservationID"];
+
+    let url = "http://localhost:8080/updateReservationStatus/CANCELLED/" + reservationId;
+
+    const putRequest = {
+        method: 'PUT',
+        body: JSON.stringify(reservation),
+        headers: {
+            'Content-Type': 'application/json'
+        }}
+
+  const fetchData = await fetch(url, putRequest)
+
+    if (!fetchData.ok) {
+        console.log("Det gik ikke godt med update");
+    }
+    else location.reload(); //reloader siden når reservation er cancelled
 }
 
 async function confirmReservation(reservation){

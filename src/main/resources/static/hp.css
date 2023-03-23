@@ -32,7 +32,7 @@
 h1{
     font-size: 60px;
     text-transform: uppercase;
-    background: linear-gradient( to bottom, #580ca2,  #e26900);
+    background: linear-gradient( to bottom, #bb254d91, #3a0669);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent ;
 }

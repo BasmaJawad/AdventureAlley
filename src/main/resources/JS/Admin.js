@@ -240,6 +240,15 @@ async function restDeleteUser(user) {
 
 }
 
+const logoutBtn = document.getElementById("logoutBtn")
+logoutBtn.addEventListener("click", () => {
+    logout()
+})
+
+function logout(){
+localStorage.removeItem("users")
+}
+
 
 
 
