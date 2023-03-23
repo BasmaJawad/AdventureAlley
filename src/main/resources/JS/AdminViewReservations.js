@@ -1,4 +1,5 @@
 let pendingReservations = [];
+let confirmedReservations = [];
 
 async function fetchPendingReservations() {
 
@@ -12,6 +13,21 @@ async function fetchPendingReservations() {
 
 fetchPendingReservations()
 
+
+
+async function fetchConfirmedReservations() {
+
+    const getConfirmedReservations = "http://localhost:8080/reservationsByStatus/CONFIRMED";
+    confirmedReservations = await fetchAny(getConfirmedReservations);
+
+    if (confirmedReservations.length > 0) {
+        confirmedReservations.forEach(displayConfirmedReservations)
+    }
+}
+
+fetchConfirmedReservations()
+
+
 function fetchAny(url) {
     console.log(url)
     return fetch(url).then((response) => response.json())
@@ -23,6 +39,7 @@ function displayReservations(reservation, index) {
     const tablebody = document.getElementById("tableBody")
     const tr = document.createElement("tr")
     const getCustomer = reservation.customer
+    console.log(getCustomer.firstname)
     const getActivity = reservation["activity"]
 
     tr.innerHTML =
@@ -112,6 +129,28 @@ async function confirmReservation(reservation) {
     if (!fetchData.ok) {
         console.log("Det gik ikke godt med update");
     } else location.reload(); //reloader siden når reservation er godkendt
+}
+
+function displayConfirmedReservations(reservation) {
+
+
+    const ALlConfTableBody = document.getElementById("ALlConfTableBody")
+    const trC = document.createElement("tr")
+    const getCustomer = reservation.customer
+    console.log(getCustomer.firstname)
+    const getActivity = reservation["activity"]
+
+    trC.innerHTML =
+        "<td>" + reservation["reservationID"] + "</td>" +
+        "<td>" + getCustomer.firstname + " " + getCustomer.lastname + "</td>" +
+        "<td>" + getCustomer.email + "</td>" +
+        "<td>" + getActivity.name + "</td>" +
+        "<td>" + reservation.date + "</td>" +
+        "<td>" + getActivity.startTime + "</td>" +
+        "<td>" + reservation.status + "</td>" +
+        "<td>"
+
+    ALlConfTableBody.appendChild(trC);
 }
 
 

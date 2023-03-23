@@ -162,7 +162,7 @@ p {
 }
 
 
-#reservationDiv{
+#reservationDiv {
     padding: 30px;
     margin-top: 20px;
     width: 100%;
@@ -170,6 +170,27 @@ p {
     border-radius: 10px;
 
 }
+
+
+#ALlConfirmedReservations, #ALlCancelledReservations{
+    padding: 30px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 10px;
+
+
+}
+
+#AllConfTable, #AllCancelledTable{
+    margin: initial;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+
+}
+
+
 
 table {
     margin: auto;
@@ -217,6 +238,20 @@ h1{
     margin-top: 20px;
     margin-bottom: 50px;
 }
+
+h2{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 30px;
+
+}
+
+h3{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
 
 
 
