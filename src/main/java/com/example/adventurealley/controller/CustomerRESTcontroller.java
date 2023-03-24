@@ -25,60 +25,50 @@ import java.util.Optional;
 @CrossOrigin //for at vi kan sende requets hertil med javascript
 public class CustomerRESTcontroller {
 
+
     @Autowired
-    CustomerRepo customerRepo;
     CustomerService customerService;
-
-    @Autowired
-    ReservationRepo reservationRepo;
-
-    @Autowired
-    ActivityRepo activityRepo;
 
     @PostMapping("/signup")
     @ResponseStatus(HttpStatus.CREATED)
     public Customer postCustomer(@RequestBody Customer customer) {
-        System.out.println(customer);
-        return customerRepo.save(customer);
+        return customerService.postCustomer(customer);
     }
 
     @PostMapping("/paintballBooking")
     public Reservation postReservation(@RequestBody Reservation reservation) {
-        System.out.println(reservation);
-        System.out.println("halloo");
-        reservation.setStatus(Status.PENDING);
-        return reservationRepo.save(reservation);
+        return customerService.postReservation(reservation);
+
     }
 
     @GetMapping("/activities")
     public List<Activity> getAvailableTimes() {
-        return activityRepo.findAll();
+        return customerService.getAvailableTimes();
     }
 
-    @GetMapping ("/Login")
-    public List<Customer> allCustomers(){
-        return customerRepo.findAll();
+    @GetMapping("/Login")
+    public List<Customer> allCustomers() {
+        return customerService.allCustomers();
     }
 
 
-    @PostMapping ("/SignUp")
+    @PostMapping("/SignUp")
     @ResponseStatus(HttpStatus.CREATED)
-    public Customer postCustomer2(@RequestBody Customer customer) {
-        System.out.println(customer);
-        return customerRepo.save(customer);
+    public Customer postNewCustomer(@RequestBody Customer customer) {
+        return customerService.postNewCustomer(customer);
     }
 
 
     @GetMapping("/reservation/{date}")
-        public List<Reservation> reservations(@PathVariable String date){
+    public List<Reservation> getReservationsByDate(@PathVariable String date) {
 
-            return reservationRepo.findReservationByDate(date);
+        return customerService.getReservationsByDate(date);
 
     }
 
     @GetMapping("/customerReservations/{email}")
-    public List<Reservation> customerReservations(@PathVariable String email){
-        return reservationRepo.findReservationByCustomerEmailOrderByDateAsc(email);
+    public List<Reservation> customerReservations(@PathVariable String email) {
+        return customerService.customerReservations(email);
 
     }
 }
