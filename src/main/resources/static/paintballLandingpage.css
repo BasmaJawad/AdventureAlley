@@ -29,7 +29,7 @@
     padding-top: 60px;
     background-color: rgba(42, 41, 41, 0.45);
     position: relative;
-    border: 1px solid  #e26900;
+    border: 1px solid #e26900;
     box-shadow: 0 0 30px #fc8d2d;
     height: 550px;
 }
@@ -74,21 +74,23 @@
     line-height: 50px;
     cursor: pointer;
     font-size: 18px;
-    padding-top:10px;
+    padding-top: 10px;
 }
 
-.selected{
-    background: linear-gradient( to left, #580ca291, #8723c6d4);
+.selected {
+    background: linear-gradient(to left, #580ca291, #8723c6d4);
     color: white;
 }
-.nextReservation:hover{
+
+.nextReservation:hover {
     background-color: #6c1cc5;
     color: white;
 }
+
 h1 {
-    background: linear-gradient( to bottom, #e73213,  #e26900);
+    background: linear-gradient(to bottom, #e73213, #e26900);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent ;
+    -webkit-text-fill-color: transparent;
     font-size: 80px;
     margin-bottom: 0;
 }
@@ -134,9 +136,10 @@ h2 {
      */
     opacity: 0;
 }
-.nextReservation.active, .nextReservation2.active{
+
+.nextReservation.active, .nextReservation2.active {
     top: 570px;
-    left:1000px;
+    left: 1000px;
     font-family: "Bauhaus 93", sans-serif;
     font-size: 20px;
     margin-top: 0px;
@@ -151,7 +154,8 @@ h2 {
     opacity: 1;
 
 }
-.nextReservation2:hover{
+
+.nextReservation2:hover {
     background-color: #6c1cc5;
     color: white;
 }
@@ -162,7 +166,8 @@ h2 {
     margin-top: 50px;
     font-size: 20px;
 }
-#paint{
+
+#paint {
     position: absolute;
     left: 900px;
     top: 500px;
@@ -172,7 +177,7 @@ h2 {
 
 }
 
-#paint2{
+#paint2 {
     width: 150px;
     position: absolute;
     left: 1100px;
@@ -183,55 +188,58 @@ h2 {
 
 }
 
-.popup{
+.popup {
     position: absolute;
     height: 400px;
     top: -150%;
     left: 50%;
-    opacity:0;
+    opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
-    width:380px;
-    padding:20px 30px;
+    width: 380px;
+    padding: 20px 30px;
     background: linear-gradient(to right, #5a15a9, #3a0669);
-    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    transistion:top 0ms ease-in-out 200ms,
+    transistion: top 0ms ease-in-out 200ms,
     opacity 200ms ease-in-out 200ms,
     transform 20ms ease-in-out 200ms;
 
 }
 
-.popup.active{
-    top:1100px;
-    opacity: 1;
-    transform: translate(-50%,-50%) scale(1);
-    transistion:top 0ms ease-in-out 0ms,
-    opacity 200ms ease-in-out 200ms,
-    transform 20ms ease-in-out 200ms;
-}
 
-#priceTotal{
+#priceTotal {
     margin-top: 30px;
     font-size: 20px;
     float: left;
-
 }
 
-#customerName{
+
+#customerName {
     position: absolute;
     top: 40px;
     left: 70px;
     font-family: Impact, sans-serif;
     font-size: 18px;
     margin-right: 30px;
-margin-bottom: 50px;
+    margin-bottom: 50px;
     letter-spacing: 1px;
 }
 
-#insideAvailableTimes{
-    margin-top:20px;
+#insideAvailableTimes {
+    margin-top: 20px;
 }
 
+.popup.active {
+    top: 25%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transistion: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 200ms, transform 20ms ease-in-out 200ms;
+}
 
-#bb254d91, #3a0669
+.popup.active {
+    top: 65%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transistion: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 200ms, transform 20ms ease-in-out 200ms;
+}
 

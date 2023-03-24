@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Reservationer</title>
     <link rel="stylesheet" href="../static/navbar.css">
+    <link rel="stylesheet" href="../static/loginpage.css">
     <link rel="stylesheet" href="../static/CustomerReservations.css">
+
 
 </head>
 <body>
@@ -13,11 +15,7 @@
     <div class="wrapper">
         <img id="logo" src="../static/images/logohvid.png"/>
         <nav>
-            <ul>
-                <li><a href="hp.html">HJEM</a></li>
-                <li><a href="hp.html">BOOKING</a></li>
-                <li><a href="hp.html">LOG IND</a></li>
-                <li></li>
+            <ul id="navbarWrapper">
             </ul>
         </nav>
     </div>
@@ -36,6 +34,39 @@
 
 </div>
 
+<div class="overlay">
+
+    <div class="popup">
+        <div class="close-btn">&times;</div>
+
+        <div class="form" id="loginForm">
+            <h2>Login</h2>
+
+
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Indtast din email">
+            </div>
+
+
+            <div class="form-element">
+                <label for="password">Adgangskode</label>
+                <input type="password" id="password" placeholder="Indtast adgangskode">
+            </div>
+
+            <div class="form-element">
+                <button class="form-element" id="submitButton" type="submit" value="submit"> Log ind</button>
+            </div>
+        </div>
+        <br>
+        <a href="SignUp.html" id="linkSignUp">Klik her for at tilmelde dig</a>
+
+    </div>
+
+</div>
+
 <script src="../JS/CustomerReservations.js"></script>
+<script src="../JS/navbarIteration.js"></script>
+<script src="../JS/Login.js"></script>
 </body>
 </html>

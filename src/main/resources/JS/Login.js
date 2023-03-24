@@ -59,17 +59,18 @@ function compareUserInput() {
 
         // Denne funktion kommer fra js/reservation.js
 
-        var currentUrl = window.location.href;
-        console.log("nuværende side" + currentUrl)
+        //let currentUrl = window.location.href;
+        //console.log("nuværende side" + currentUrl)
 
-        if (currentUrl.includes("http://localhost:63342/AdventureAlley/templates/hp.html#popup")) {
+        if ( window.location.pathname.includes("hp.html") || window.location.pathname.includes("CustomerReservations.html")){
             window.location.href = "../templates/CustomerReservations.html"
-            console.log("hej 2")
+
         } else {
             //window.location.href = "../templates/paintballLandingpage.html"
             document.querySelector(".popup").classList.remove("active")
             document.querySelector(".overlay").classList.remove("overlayBackground")
             showLoggedCustomer()
+            navbar()
         }
 
         //document.querySelector(".nextReservation").classList.remove("active");
@@ -79,4 +80,3 @@ function compareUserInput() {
     }
 
 }
-

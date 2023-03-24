@@ -36,7 +36,7 @@
 
 }
 .popup.active{
-    top:50%;
+    top:25%;
     opacity: 1;
     transform: translate(-50%,-50%) scale(1);
     transistion:top 0ms ease-in-out 0ms,

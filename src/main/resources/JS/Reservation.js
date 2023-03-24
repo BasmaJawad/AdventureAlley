@@ -209,10 +209,12 @@ async function postReservation(event) {
 
 }
 
+
 const logoutButton = document.getElementById("logout")
 logoutButton.addEventListener("click", removeCustomer)
 
 function removeCustomer() {
+    console.log("logget ud")
     localStorage.removeItem('customer');
 }
 
@@ -227,7 +229,5 @@ function checkValue() {
     }
     return true;
 }
-
-
 
 
