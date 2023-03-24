@@ -1,0 +1,185 @@
+body{
+    font-family: Futura;
+    margin:0;
+    min-height: 100vh;
+    background: var(--secondary);
+    color: var(--text-default);
+    display: grid;
+    grid-template-columns: 16em auto ;
+    transition: 0.3s ease ease-in-out;
+}
+:root{
+    --accent: #112d36; /* hover farve*/
+    --primary: #fff;/* panel farve*/
+    --secondary: #f5f7fc;/* baggrund farve*/
+    --text-default: #000;/* tekst panel farve*/
+    --text-primary: #1d1933;/* tekst oversigt farve*/
+    --text-secondary: #1a086e;
+}
+
+*{
+    box-sizing: border-box;
+
+}
+
+
+ul{
+    list-style:  none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+
+p {
+    color: var(--text-primary);
+    font-size: 0.9em;
+    line-height: 25px;
+}
+
+.sidebar{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    padding: 3em;
+    width: 16.5em;
+    border-right: 3px solid #d7e3e7;
+    overflow-y: scroll;
+}
+
+.sidebar ul:not(.mail){
+    margin: 2em 0 5em 0;
+}
+.sidebar ul i {
+    color: #0b1f25;
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+.sidebar ul li {
+    margin-right: 0.5em;
+}
+
+.sidebar ul a {
+    padding: 0.7em;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.sidebar ul a:hover{
+    background: var(--accent);
+    color:#fff;
+}
+.sidebar ul li:hover i {
+    color:#fff;
+}
+
+
+.navbar , .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.container{
+    display: flex;
+}
+
+.card{
+    border-radius: 20px;
+    margin-left: 10px;
+    height: 150px;
+    background-color: whitesmoke;
+    flex: 1;
+    transition: .2s all ease;
+}
+
+
+.card:hover{
+    flex:2;
+    background-color: var(--accent);
+    color: white;
+
+}
+
+h2, h3, h4, h5{
+    position: relative;
+    margin-left: 20px;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+#equipmentWrapper{
+    margin-top: 100px;
+    padding-left: 40px;
+    width: 1150px;
+    background-color: var(--secondary);
+}
+
+#equipmentDiv {
+    padding: 30px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 10px;
+
+}
+
+#logoutBtn{
+    margin-left: 100px;
+    position: absolute;
+    top: 30px;
+    left: 1200px;
+    padding: 10px;
+}
+
+#logoutBtn:hover{
+    background: var(--accent);
+    color:#fff;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+ #gunsDiv{
+     margin-top: 100px;
+     padding-left: 40px;
+     width: 1150px;
+     background-color: #dde1e3;
+     border-radius: 20px;
+ }
+
+#gunsDiv ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 300px;
+
+}
+
+
+
+
+
+
+
+
+#gun, #gun2, #gun3{
+    height: 100px;
+    width: 180px;
+    margin-left: 20px;
+    padding: 10px; /* adjust the padding as needed */
+}
+
+
