@@ -10,11 +10,11 @@ body{
     transition: 0.3s ease ease-in-out;
 }
 :root{
-    --accent: #112d36; /* hover farve*/
+    --accent: #49058f; /* hover farve*/
     --primary: #fff;/* panel farve*/
     --secondary: #f5f7fc;/* baggrund farve*/
     --text-default: #000;/* tekst panel farve*/
-    --text-primary: #1d1933;/* tekst oversigt farve*/
+    --text-primary: #271741;/* tekst oversigt farve*/
     --text-secondary: #1a086e;
 }
 
@@ -92,7 +92,6 @@ main{
     transistion: 0.3s ease-in-out;
     margin-top:20px ;
     display: flex;
-    height: 500px;
 }
 
 .navbar , .menu{
@@ -258,19 +257,21 @@ thead{
     border-radius: 20px;
 }
 
-th, td {
-
+td {
+     padding: 30px 12px;
+     text-align: left;
+    border-bottom: 1px solid #f5f7fc;
+}
+th {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #f5f7fc;
-}
-
-th {
     background-color: #f5f7fc;
 }
 
+
 .edit-btn{
-    background-color: #060dbd;
+    background-color: #5e07bb;
     color: white;
     padding: 6px 12px;
     border: none;
@@ -281,7 +282,7 @@ th {
 
 
 .delete-btn {
-    background-color: #e52c1e;
+    background-color: #f97a02;
     color: white;
     padding: 6px 12px;
     border: none;
@@ -359,5 +360,12 @@ th {
     border: 1px solid black;}
 
 
+#logo{
+    width: 170px;
+    position: absolute;
+    top: 90%;
+    left: 50px;
+
+}
 
 

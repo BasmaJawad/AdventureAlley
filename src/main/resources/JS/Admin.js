@@ -1,27 +1,39 @@
+
 document.querySelector("#u-Link").
 addEventListener("click", function()
 {document.querySelector(".popupUser").classList.add("active");
 
 });
 
+
 document.querySelector(".popupUser .close-btn").addEventListener("click", function()
 {document.querySelector(".popupUser").classList.remove("active");
 });
 
 
-
-
-document.addEventListener('DOMContentLoaded', setup);
+window.onload = setup;
 
 let createUserForm;
-let users = JSON.parse(localStorage.getItem("users"));
+const table = document.getElementById("tableBody")
 
-window.onload = users.forEach(displayUser)
+function fetchAny(url) {
+    console.log(url)
+    return fetch(url).then((response) => response.json())
+}
+
+let users = []
+
+async function actionFetchUsers() {
+    const UrlLogin = "http://localhost:8080/UserLogin"
+    users = await fetchAny(UrlLogin);
+    table.innerHTML = "";
+    users.forEach(displayUser);
+}
 
 function setup(){
     createUserForm = document.getElementById("CreateUser");
     createUserForm.addEventListener("submit",submitData);
-
+    actionFetchUsers();
 }
 // Her submitter vi data
 async function submitData(event) {
@@ -36,11 +48,12 @@ async function submitData(event) {
 
         const formData = new FormData(form) //forbinder alle input med input-value fra brugeren
 
-        await postFormData(url, formData)
+        await postNewUser(url, formData)
 
         alert(formData.get('username') + ' er oprettet');
-        //Vi skal sørger for at den redirekte til de rigtige landingpage, alt efter hvordan hvilke aktivitet man har valgt
 
+        document.querySelector(".popupUser").classList.remove("active")
+        actionFetchUsers()
 
     }
     catch (error) {
@@ -50,7 +63,7 @@ async function submitData(event) {
 }
 
 // Vi sørger for at poste data til DB
-async function postFormData(url, formData) {
+async function postNewUser(url, formData) {
 
     const newUser = Object.fromEntries(formData.entries()) //opdeler formData's elementer til objekter
     //newUserStored = localStorage.setItem("username", JSON.stringify(newUser)); //sætter newCustomer i local storage
@@ -83,7 +96,6 @@ function displayUser(user){
     console.log("display User" + user.username)
 
 
-    const table = document.getElementById("tableBody")
     const tableBody = document.createElement("tr")
 
     //LÆs op på setAttribute

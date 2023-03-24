@@ -1,37 +1,37 @@
 let pendingReservations = [];
 let confirmedReservations = [];
 
-async function fetchPendingReservations() {
-
-    const getPendingReservations = "http://localhost:8080/reservationsByStatus/PENDING";
-    pendingReservations = await fetchAny(getPendingReservations);
-
-    if (pendingReservations.length > 0) {
-        pendingReservations.forEach(displayReservations)
-    }
-}
-
-fetchPendingReservations()
-
-
-
-async function fetchConfirmedReservations() {
-
-    const getConfirmedReservations = "http://localhost:8080/reservationsByStatus/CONFIRMED";
-    confirmedReservations = await fetchAny(getConfirmedReservations);
-
-    if (confirmedReservations.length > 0) {
-        confirmedReservations.forEach(displayConfirmedReservations)
-    }
-}
-
-fetchConfirmedReservations()
-
 
 function fetchAny(url) {
     console.log(url)
     return fetch(url).then((response) => response.json())
 }
+async function fetchReservationsByStatus(status) {
+    const url = `http://localhost:8080/reservationsByStatus/${status}`;
+    const reservations = await fetchAny(url);
+
+    if (reservations.length > 0) {
+        switch(status) {
+            case 'PENDING':
+                reservations.forEach(displayReservations);
+                break;
+            case 'CONFIRMED':
+                reservations.forEach(displayConfirmedReservations);
+                break;
+            case 'CANCELLED':
+                reservations.forEach(displayCancelledReservations);
+                break;
+            default:
+                console.log('Invalid status');
+        }
+    }
+}
+
+fetchReservationsByStatus('PENDING');
+fetchReservationsByStatus('CONFIRMED');
+fetchReservationsByStatus('CANCELLED');
+
+
 
 function displayReservations(reservation, index) {
 
@@ -46,7 +46,7 @@ function displayReservations(reservation, index) {
         "<td>" + reservation["reservationID"] + "</td>" +
         "<td>" + getCustomer.firstname + " " + getCustomer.lastname + "</td>" +
         "<td>" + getCustomer.email + "</td>" +
-        "<td>" + getActivity.name + "</td>" +
+        "<td id='activityName'> " + getActivity.name + "</td>" +
         "<td>" + reservation.date + "</td>" +
         "<td>" + getActivity.startTime + "</td>" +
         "<td>" + reservation.status + "</td>" +
@@ -144,7 +144,7 @@ function displayConfirmedReservations(reservation) {
         "<td>" + reservation["reservationID"] + "</td>" +
         "<td>" + getCustomer.firstname + " " + getCustomer.lastname + "</td>" +
         "<td>" + getCustomer.email + "</td>" +
-        "<td>" + getActivity.name + "</td>" +
+        "<td >" + getActivity.name + "</td>" +
         "<td>" + reservation.date + "</td>" +
         "<td>" + getActivity.startTime + "</td>" +
         "<td>" + reservation.status + "</td>" +
@@ -153,5 +153,26 @@ function displayConfirmedReservations(reservation) {
     ALlConfTableBody.appendChild(trC);
 }
 
+function displayCancelledReservations(reservation) {
+
+
+    const AllCancelledTableBody = document.getElementById("ALlCancelTableBody")
+    const trCan = document.createElement("tr")
+    const getCustomer = reservation.customer
+    console.log(getCustomer.firstname)
+    const getActivity = reservation["activity"]
+
+    trCan.innerHTML =
+        "<td>" + reservation["reservationID"] + "</td>" +
+        "<td>" + getCustomer.firstname + " " + getCustomer.lastname + "</td>" +
+        "<td>" + getCustomer.email + "</td>" +
+        "<td>" + getActivity.name + "</td>" +
+        "<td>" + reservation.date + "</td>" +
+        "<td>" + getActivity.startTime + "</td>" +
+        "<td>" + reservation.status + "</td>" +
+        "<td>"
+
+    AllCancelledTableBody.appendChild(trCan);
+}
 
 

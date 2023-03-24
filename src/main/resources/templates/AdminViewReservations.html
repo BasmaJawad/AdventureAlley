@@ -5,17 +5,17 @@
     <title>Reservations</title>
     <link rel="stylesheet" href="../static/AdminViewReservations.css">
 
+
 </head>
 <body>
-
-
 
 
 <div>
     <nav class="sidebar">
 
+
         <a href="Admin.html" class="brand">
-            <h1> Oversigt</h1>
+            <h1 id="oversigt"> Oversigt</h1>
         </a>
         <ul>
             <li>
@@ -40,46 +40,50 @@
                 </a>
             </li>
         </ul>
+        <img  id="logo" src="../static/images/logoPurple.png"/>
     </nav>
 </div>
-
 
 
 <div id="reservationDivWrapper">
 
     <div class="menu">
-        <a id ="logoutBtn" href="UserLogin.html" >Log ud</a>
+        <a id="logoutBtn" href="UserLogin.html">Log ud</a>
+    </div>
+
+    <div id="searchBar">
+        <input type="text" id="searchQuery" placeholder="   Søg status eller navn">
     </div>
 
     <h1>
         Reservationer - Afventer godkendelse
     </h1>
 
-<div id="reservationDiv">
-    <table id ="userTable">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Kunde</th>
-            <th>Email</th>
-            <th>AKtivitet</th>
-            <th>Dato</th>
-            <th>Tid</th>
-            <th>Status</th>
-            <th>Godkend</th>
-            <th>Annuller</th>
-        </tr>
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-    </table>
-</div>
+    <div id="reservationDiv">
+        <table id="userTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kunde</th>
+                <th>Email</th>
+                <th>Aktivitet</th>
+                <th>Dato</th>
+                <th>Tid</th>
+                <th>Status</th>
+                <th>Godkend</th>
+                <th>Annuller</th>
+            </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
 
-    <h2>
+    <h1>
         Godkendte reservationer
-    </h2>
+    </h1>
     <div id="ALlConfirmedReservations">
-        <table id ="AllConfTable">
+        <table id="AllConfTable">
             <thead>
             <tr id="trC">
                 <th>ID</th>
@@ -97,12 +101,11 @@
     </div>
 
 
-
-    <h3>
+    <h1>
         Annullerede reservationer
-    </h3>
+    </h1>
     <div id="ALlCancelledReservations">
-        <table id ="AllCancelledTable">
+        <table id="AllCancelledTable">
             <thead>
             <tr id="trCan">
                 <th>ID</th>
@@ -132,7 +135,7 @@
 
         <div class="form-element">
             <label for="username">Brugernavn</label>
-            <input type="text" id="username" name ="username"placeholder="Indtast brugernavn">
+            <input type="text" id="username" name="username" placeholder="Indtast brugernavn">
         </div>
 
 
@@ -152,6 +155,7 @@
 </div>
 
 <script src="../JS/AdminViewReservations.js"></script>
+<script src="../JS/searchBar.js"></script>
 
 </body>
 </html>

@@ -31,7 +31,7 @@ public class UserRESTcontroller {
         return userService.getUsers();
     }
 
-    @PostMapping("/Admin")
+    @PostMapping("/Admin") //saver new user
     @ResponseStatus(HttpStatus.CREATED)
     public User postUser(@RequestBody User user) {
         return userService.postuser(user);
