@@ -57,25 +57,25 @@
         Udstyr
     </h1>
 
-<div id="equipmentDiv">
+<div id="titleDiv">
 <div class="container">
-    <div class="card">
-        <h2>
+    <div class="card" id="paintball"  >
+        <h2 >
             Paintball
         </h2>
 
     </div>
-    <div class="card">
+    <div class="card" id="lasertag" >
         <h3>
             Lasertag
         </h3>
     </div>
-    <div class="card">
+    <div class="card" id="gokart-biler">
         <h4>
             Gokart biler
         </h4>
     </div>
-    <div class="card">
+    <div class="card" id="gokart-dragter-hjelme">
         <h5>
              Gokart - dragter og hjelme
         </h5>
@@ -84,16 +84,93 @@
 </div>
 
 
-    <div id="gunsDiv">
-        <ul>
-            <li><img src="../static/images/redgun.png" alt="Photo 1" id="gun"></li>
-            <li><img src="../static/images/black-pistol-copy.png" alt="Photo 1" id="gun2"></li>
-            <li><img src="../static/images/bluegun.png" alt="Photo 1" id="gun3"></li>
+    <div id="equipmentDiv">
 
-        </ul>
+        <div class = "paintballPopup" id = "popup1">
+            <h6>
+                Paintball guns
+            </h6>
+            <button id="close-button">x</button>
+            <table>
+                <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Photo</th>
+                    <th>Items Left</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Item 1</td>
+                    <td><a href="#"><img src="../static/images/redgun.png" alt="Item 1" id ="gun1"></a></td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Item 2</td>
+                    <td><a href="#"><img src="../static/images/black-pistol-copy.png" alt="Item 2" id ="gun2"></a></td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Item 3</td>
+                    <td><a href="#"><img src="../static/images/bluegun.png" alt="Item 3" id ="gun3"></a></td>
+                    <td>3</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
     </div>
+
+
+
+
+
+
+    <div class = "lasertagPopup" id = "popup2">
+        <h7>
+        Oversigt Lasertag
+        </h7>
+        <button id="close-button2">x</button>
+        <table>
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Photo</th>
+                <th>Items Left</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Item 1</td>
+                <td><a href="#"><img src="../static/images/lasertag/laser-tag-vest.png" alt="Item 1" id ="laser1"></a></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td><a href="#"><img src="../static/images/lasertag/lasertag-gun1.png" alt="Item 2" id ="laser2"></a></td>
+                <td>20 </td>
+            </tr>
+            <tr>
+                <td>Item 3</td>
+                <td><a href="#"><img src="../static/images/lasertag/lasertag-gun.png" alt="Item 3" id ="laser3"></a></td>
+                <td>30</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
 </div>
 
+
+
+
+<script src="../JS/Udstyr.js"></script>
 
 
 </body>

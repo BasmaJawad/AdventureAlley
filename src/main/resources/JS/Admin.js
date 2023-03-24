@@ -9,8 +9,6 @@ document.querySelector(".popupUser .close-btn").addEventListener("click", functi
 });
 
 
-
-
 document.addEventListener('DOMContentLoaded', setup);
 
 let createUserForm;
