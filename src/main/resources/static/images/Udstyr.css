@@ -118,6 +118,15 @@ h2, h3, h4, h5{
     font-size: 25px;
 }
 
+h6, h7{
+    position: relative;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 25px;
+    color: black;
+
+}
+
 #equipmentWrapper{
     margin-top: 100px;
     padding-left: 40px;
@@ -125,7 +134,8 @@ h2, h3, h4, h5{
     background-color: var(--secondary);
 }
 
-#equipmentDiv {
+#titleDiv {
+    margin-bottom: 200px;
     padding: 30px;
     margin-top: 20px;
     width: 100%;
@@ -150,36 +160,80 @@ h2, h3, h4, h5{
 }
 
 
- #gunsDiv{
-     margin-top: 100px;
-     padding-left: 40px;
-     width: 1150px;
-     background-color: #dde1e3;
-     border-radius: 20px;
- }
 
-#gunsDiv ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin-left: 300px;
+ /* Ny måde at lave en popup div (test) */
+#popup1, #popup2 {
+    margin-top: 160px;
+    position: relative;
+    left: 45.5%;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 30px;
+    width: 1000px;
+    background-color: var(--primary);
+    border-radius: 20px;
+    border: 2px solid var(--accent);
+}
 
+#popup1 p, #popup2 p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#close-button, #close-button2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: var(--accent);
+    color:white;
+    border: none;
+    border-radius: 40px;
+    width: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
 
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
 
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
 
+td img {
+    max-width: 100%;
+    height: auto;
+}
 
+td a:hover img {
+    opacity: 0.8;
+}
 
+td:last-child {
+    text-align: center;
+}
 
-
-#gun, #gun2, #gun3{
+#gun1, #gun2, #gun3, #laser1, #laser2, #laser3{
     height: 100px;
     width: 180px;
     margin-left: 20px;
-    padding: 10px; /* adjust the padding as needed */
+    padding: 10px;
+    position: center;
+    
 }
+
+
+
 
 
