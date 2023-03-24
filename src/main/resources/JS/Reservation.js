@@ -1,8 +1,26 @@
 //function der skal køres når html loader, (venter ikke på css, js osv)
 document.addEventListener('DOMContentLoaded', actionFetchTimes);
+window.addEventListener("load", setup);
+
 let totalPrice = 0;
+let activities = []
+let reservations = []
+let chosenActivity;
 
 const reservationButton = document.querySelector(".nextReservation2")
+const UrlActivitiTimes = "http://localhost:8080/activities";
+const timeDivWrapper = document.getElementById("insideAvailableTimes") //Henter Tom div hvor alle tiderne skal vises
+
+const dateInput = document.getElementById("date") //henter input hvor dato skal indtastes
+const today = new Date().toISOString().split('T')[0] //finder dagens dato og sætter den som minimum i input
+dateInput.min = today
+dateInput.addEventListener("change", getReservationsByDate)
+
+const participants = document.getElementById("participants")
+participants.addEventListener("keyup", calculatePrice)
+
+const logoutButton = document.getElementById("logout")
+logoutButton.addEventListener("click", removeCustomer)
 
 function setup() {
 
@@ -13,33 +31,11 @@ function setup() {
 
 }
 
-// Remove the customer data from local storage after 1 hours
+// Remove the customer data from local storage after 1 hour (logger ud)
 setTimeout(function () {
     removeCustomer()
 }, 60 * 60 * 1000); // 1 hour in milliseconds
 
-//når siden loader skal denne funktion kaldes
-window.addEventListener("load", setup);
-
-//for at hente alle activities
-const UrlActivitiTimes = "http://localhost:8080/activities";
-//Henter Tom div hvor alle tiderne skal vises
-const timeDivWrapper = document.getElementById("insideAvailableTimes")
-//henter input hvor dato skal indtastes
-const dateInput = document.getElementById("date")
-const participants = document.getElementById("participants")
-
-
-//finder dagens dato og sætter den som minimum i input
-const today = new Date().toISOString().split('T')[0];
-dateInput.min = today
-
-//funktion der viser alle ledige tider for den valgte dato
-dateInput.addEventListener("change", getReservationsByDate)
-participants.addEventListener("keyup", calculatePrice)
-
-let activities = []
-let reservations = []
 
 async function actionFetchTimes() {
     activities = await fetchAny(UrlActivitiTimes);
@@ -51,8 +47,8 @@ function fetchAny(url) {
     return fetch(url).then((response) => response.json())
 }
 
+//viser alle ledige tider for en aktivitet
 function displayTimes(activity) {
-
     calculatePrice()
 
     const timesDiv = document.createElement("div")
@@ -73,12 +69,11 @@ function displayTimes(activity) {
 
 }
 
-let chosenActivity;
+
 
 function selectTime(element, activityTimes) {
-    //selectedTime er en hidden input i html, som nu får en hel aktivitet som value
-    //VIRKER IKKE
-    // document.getElementById("selectedTime").value = activityTimes;
+
+    // document.getElementById("selectedTime").value = activityTimes; //VIRKER IKKE
 
     chosenActivity = activityTimes;
 
@@ -105,7 +100,6 @@ async function getReservationsByDate() {
     reservations = await fetchAny(getReservationsByDateUrl)
     getAvailableActivityTimes()
 
-    console.log(reservations)
 }
 
 function getAvailableActivityTimes() {
@@ -113,12 +107,10 @@ function getAvailableActivityTimes() {
     //map laver ny array for hvert element i reservations, ved at parse det element i en function, som returnerer det ønskede output
     //så det fungere lidt som foreach(), bare hvor det sætter det i et array
     const reservedActivityIds = reservations.map(getReservedActivityIds) //ny liste med alle aktivitet id'er fra reservations
-    console.log("her er alle reserverede " + reservedActivityIds)
-    console.log(typeof reservedActivityIds)
     //filter laver ny array med hvert element i activities, der ikke findes i reservedActivityIds. Filter() er en function, som returnerer true eller false
     const availabeActivityTimes = activities.filter(activities => !reservedActivityIds.includes(activities.id)) //ny liste med alle aktiviteter, som ikke er i reservations
 
-    console.log("her er alle ledie " + availabeActivityTimes)
+
     //for at slette de andre timeDivs i wrapperen, sætter vi innerHTML til tom
     timeDivWrapper.innerHTML = '';
     availabeActivityTimes.forEach(displayTimes)
@@ -131,33 +123,21 @@ function getReservedActivityIds(reservation) {
 
 async function showLoggedCustomer() {
 
-    let c = localStorage.getItem("customer")
-    c = JSON.parse(c)
-    if (c != undefined) {
-        const customerName = document.getElementById("customerName")
-        customerName.textContent = c["firstname"] + " " + c["lastname"]
+    let customer = localStorage.getItem("customer")
+    customer = JSON.parse(customer)
+    if (customer != undefined) {
+        const customerName = document.getElementById("customerName") //for at desplaye navn på kunde
+        customerName.textContent = customer["firstname"] + " " + customer["lastname"]
 
+        //når man er logget ind skal popup fjernes
         document.querySelector(".nextReservation").classList.remove("active");
         document.querySelector(".nextReservation2").classList.add("active");
+
         await reservationButton.addEventListener("click", postReservation)
 
     } else {
-
         console.log("ingen logget ind")
     }
-}
-
-
-function calculatePrice() {
-    const price = 350;
-    let participants = document.getElementById("participants").value
-    totalPrice = price * participants
-
-    const priceDiv = document.getElementById("priceTotal")
-    priceDiv.innerHTML = "Pris: <br>" +
-    "<input type='text' id='pris' name='priceTotal' " +
-        "class='resInput' value ='"+ totalPrice + " 'kr. readonly>"
-
 }
 
 async function postReservation(event) {
@@ -210,12 +190,24 @@ async function postReservation(event) {
 }
 
 
-const logoutButton = document.getElementById("logout")
-logoutButton.addEventListener("click", removeCustomer)
+
 
 function removeCustomer() {
     console.log("logget ud")
     localStorage.removeItem('customer');
+}
+
+
+function calculatePrice() {
+    const price = 350;
+    let participants = document.getElementById("participants").value
+    totalPrice = price * participants
+
+    const priceDiv = document.getElementById("priceTotal")
+    priceDiv.innerHTML = "Pris: <br>" +
+        "<input type='text' id='pris' name='priceTotal' " +
+        "class='resInput' value ='"+ totalPrice + " 'kr. readonly>"
+
 }
 
 function checkValue() {
@@ -229,5 +221,6 @@ function checkValue() {
     }
     return true;
 }
+
 
 
