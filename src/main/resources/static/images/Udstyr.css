@@ -118,7 +118,8 @@ h2, h3, h4, h5{
     font-size: 25px;
 }
 
-h6, h7{
+
+h6, #pp {
     position: relative;
     margin-left: 20px;
     margin-top: 20px;
@@ -126,6 +127,9 @@ h6, h7{
     color: black;
 
 }
+
+
+
 
 #equipmentWrapper{
     margin-top: 100px;
@@ -172,7 +176,7 @@ h6, h7{
     width: 1000px;
     background-color: var(--primary);
     border-radius: 20px;
-    border: 2px solid var(--accent);
+    border: 2px solid #3a0669;
 }
 
 #popup1 p, #popup2 p {

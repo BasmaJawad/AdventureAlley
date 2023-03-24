@@ -9,12 +9,21 @@ const closeButton = document.getElementById('close-button');
 const closeButton2 = document.getElementById('close-button2');
 
 
+
+// function to hide all popups
+function hidePopups() {
+    popup1.style.display = 'none';
+    popup2.style.display = 'none';
+}
+
 paintballCard.onclick = () => {
+    hidePopups()
     popup1.style.display = 'block';
 
 };
 
 lasertagCard.onclick = () => {
+    hidePopups()
     popup2.style.display = 'block';
 };
 
