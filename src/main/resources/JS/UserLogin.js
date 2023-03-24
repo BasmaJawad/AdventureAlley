@@ -21,6 +21,7 @@ function fetchAny(url) {
 
 async function actionFetchUsers() {
     users = await fetchAny(UrlLogin);
+
     localStorage.setItem("users", JSON.stringify(users));
 }
 
