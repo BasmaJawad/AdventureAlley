@@ -29,12 +29,6 @@ public class CustomerRESTcontroller {
     @Autowired
     CustomerService customerService;
 
-    @PostMapping("/signup")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Customer postCustomer(@RequestBody Customer customer) {
-        return customerService.postCustomer(customer);
-    }
-
     @PostMapping("/paintballBooking")
     public Reservation postReservation(@RequestBody Reservation reservation) {
         return customerService.postReservation(reservation);

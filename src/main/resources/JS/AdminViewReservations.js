@@ -13,7 +13,7 @@ async function fetchReservationsByStatus(status) {
     if (reservations.length > 0) {
         switch(status) {
             case 'PENDING':
-                reservations.forEach(displayReservations);
+                reservations.forEach(displayReservations); //pending Reservations
                 break;
             case 'CONFIRMED':
                 reservations.forEach(displayConfirmedReservations);

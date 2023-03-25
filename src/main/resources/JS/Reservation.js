@@ -98,6 +98,7 @@ async function getReservationsByDate() {
     getReservationsByDateUrl = getReservationsByDateUrl + dateInput.value;
 
     reservations = await fetchAny(getReservationsByDateUrl)
+
     getAvailableActivityTimes()
 
 }

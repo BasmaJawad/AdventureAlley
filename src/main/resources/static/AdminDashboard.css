@@ -1,0 +1,88 @@
+#dashBody {
+    margin: 30px;
+    background-color: #2c1646;
+    width: 95%;
+    border-radius: 10px;
+}
+
+#dashHeader {
+    margin: 50px;
+    margin-left: 70px;
+    color: var(--primary);
+}
+
+#KPI {
+    margin: 50px;
+    width: 95%;
+    height: 170px;
+
+}
+
+.topBox {
+    margin: 15px;
+    float: left;
+    width: 29%;
+    height: 170px;
+    background-color: rgba(80, 56, 100, 0.67);
+    border-radius: 10px;
+}
+
+#KPI2 {
+    margin: 50px;
+    width: 95%;
+}
+
+
+#revenueDiv {
+    margin: 15px;
+    margin-bottom: 100px;
+    float: left;
+    width: 50%;
+    height: 400px;
+    background-color: rgba(80, 56, 100, 0.67);
+    border-radius: 10px;
+}
+
+#revenueDiv img {
+    position: absolute;
+    top: 600px;
+    left: 450px;
+}
+
+.topBox i {
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+#popActivity {
+    margin: 15px;
+    float: left;
+    width: 40%;
+    height: 400px;
+    background-color: rgba(80, 56, 100, 0.67);
+    border-radius: 10px;
+}
+
+.topBoxTitle {
+    width: 200px;
+    color: white;
+    position: relative;
+    left: 100px;
+    top: -25px;
+    font-size: 20px;
+}
+
+h2 {
+    color: white;
+    margin: 30px 30px 30px 50px;
+    font-size: 20px;
+}
+
+.topBoxTitle p {
+    color: white;
+    font-size: 30px;
+    margin: 20px;
+    position: absolute;
+    left: 100px;
+}

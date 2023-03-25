@@ -28,7 +28,7 @@ h2{
     height:700px;
     width:380px;
     padding:20px 30px;
-    background: linear-gradient(to right, #5a15a9, #3a0669);
+    background: linear-gradient(to right, #580ca2d4, #8723c6e0);
     box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
     border-radius: 10px;
 
@@ -79,7 +79,6 @@ h2{
     cursor: pointer;
     font-weight: bold;
     font-family: "Bauhaus 93";
-
 
 }
 

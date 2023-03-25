@@ -61,5 +61,14 @@ public class UserRESTcontroller {
     }
 
 
+    @GetMapping("/reservations")
+    public List<Reservation> getReservations(){
+        return userService.getReservations();
+    }
+
+    @GetMapping("/reservationsByMonth/{year}/{month}")
+    public List<Reservation> getReservationsByMonth(@PathVariable String year, @PathVariable String month){
+        return userService.getReservationsByMonth(year, month);
+    }
 
 }
