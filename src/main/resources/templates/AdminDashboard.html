@@ -51,17 +51,17 @@
     </div>
 
     <div id="KPI">
-        <div class="topBox" >
+        <div class="topBox">
             <i class="fa-regular fa-calendar fa-3x" style="color: #f3e0ff;"></i>
             <div id="reservationerMåned" class="topBoxTitle"> Reservationer Denne Måned</div>
         </div>
 
-        <div class="topBox" >
+        <div class="topBox">
             <i class="fa-solid fa-calendar-day fa-3x" style="color: #f3e0ff;"></i>
             <div id="reservationerDag" class="topBoxTitle">Reservationer I Dag</div>
         </div>
 
-        <div class="topBox" >
+        <div class="topBox">
             <i class="fa-solid fa-calendar-check fa-shake fa-3x" style="color: #f3e0ff;"></i>
             <div id="afventerGodkendelse" class="topBoxTitle">Afventer Godkendelse</div>
         </div>
@@ -70,28 +70,24 @@
     <div id="KPI2">
 
         <div id="revenueDiv">
-            <h2>Omsætning</h2>
-            <h3 id="revenue"></h3>
-            <img src="https://vega.github.io/vega/examples/img/line-chart.png" style="width: 350px;">
-
+            <h2>Forventet omsætning</h2>
+            <p id="month"></p>
+            <div id="totalDiv">
+                <h3 id="revenue"></h3>
+            </div>
+            <i id="cashIcon" class="fa-solid fa-sack-dollar fa-bounce fa-2x" style="color: #ffb057;"></i>
         </div>
 
         <div id="popActivity">
             <h2>Mest Populær Aktivitet</h2>
-            </h2>
-
-
-
+            <div id="popActivityImgDiv">
+                <img id="popActivityImg" src="../static/images/aktivitet1.jpg" alt="popActivityImg">
+            </div>
         </div>
-
-
-
     </div>
-
-
 </div>
 
-<script src="../JS/Dashboard.js"></script>
+    <script src="../JS/Dashboard.js"></script>
 
 </body>
 </html>

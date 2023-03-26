@@ -75,14 +75,50 @@
 
 h2 {
     color: white;
-    margin: 30px 30px 30px 50px;
+    margin: 30px 30px 0px 50px;
     font-size: 20px;
 }
 
 .topBoxTitle p {
-    color: white;
-    font-size: 30px;
+    color: #ffb057;
+    font-size: 50px;
     margin: 20px;
     position: absolute;
+    top: 60px;
     left: 100px;
 }
+
+#month{
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+    text-transform: capitalize;
+
+}
+#totalDiv{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+#revenue{
+    color: white;
+    margin-top: 60px;
+    font-size: 70px;
+}
+
+#cashIcon {
+    position: absolute;
+    top: 720px;
+    left: 800px;
+}
+
+#popActivityImgDiv{
+    width: 100%;
+    text-align: center;
+}
+
+#popActivityImg{
+    width: 320px;
+}
+
