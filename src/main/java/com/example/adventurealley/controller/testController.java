@@ -2,10 +2,13 @@ package com.example.adventurealley.controller;
 
 import com.example.adventurealley.model.Activity;
 import com.example.adventurealley.model.Customer;
+import com.example.adventurealley.model.Enums.EquipType;
 import com.example.adventurealley.model.Enums.Status;
+import com.example.adventurealley.model.Equipment;
 import com.example.adventurealley.model.Reservation;
 import com.example.adventurealley.repository.ActivityRepo;
 import com.example.adventurealley.repository.CustomerRepo;
+import com.example.adventurealley.repository.EquipmentRepo;
 import com.example.adventurealley.repository.ReservationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,11 +24,13 @@ public class testController {
     @Autowired
     CustomerRepo cr;
 
-
     @Autowired
     ActivityRepo ar;
     @Autowired
     ReservationRepo rp;
+
+    @Autowired
+    EquipmentRepo ep;
 
 
 
@@ -44,4 +49,9 @@ public Reservation reservation(){
         rp.save(reservation);
     return null;
     }
-}
+
+
+
+  }
+
+

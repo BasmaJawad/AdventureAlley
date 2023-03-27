@@ -1,7 +1,9 @@
 package com.example.adventurealley.controller;
 
+import com.example.adventurealley.model.Enums.EquipType;
 import com.example.adventurealley.model.Enums.Status;
 
+import com.example.adventurealley.model.Equipment;
 import com.example.adventurealley.model.Reservation;
 import com.example.adventurealley.model.User;
 
@@ -58,6 +60,12 @@ public class UserRESTcontroller {
     @DeleteMapping("/deleteUser/{id}")
     public ResponseEntity<User> deleteUser(@PathVariable int id){
      return userService.deleteUser(id);
+    }
+
+
+    @GetMapping("/udstyrByEquipType/{equiptype}")
+        public List<Equipment> getEquipmentByStatus(@PathVariable EquipType equiptype){
+        return userService.getEquipmentType(equiptype);
     }
 
 

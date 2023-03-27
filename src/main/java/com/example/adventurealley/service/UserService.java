@@ -1,10 +1,13 @@
 package com.example.adventurealley.service;
 
 
+import com.example.adventurealley.model.Enums.EquipType;
 import com.example.adventurealley.model.Enums.Status;
 import com.example.adventurealley.model.Enums.UserType;
+import com.example.adventurealley.model.Equipment;
 import com.example.adventurealley.model.Reservation;
 import com.example.adventurealley.model.User;
+import com.example.adventurealley.repository.EquipmentRepo;
 import com.example.adventurealley.repository.ReservationRepo;
 import com.example.adventurealley.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +29,9 @@ public class UserService {
 
     @Autowired
     ReservationRepo reservationRepo;
+
+    @Autowired
+    EquipmentRepo equipmentRepo;
 
     public List<User> getUsers() {
         return userRepo.findAll();
@@ -77,6 +83,10 @@ public class UserService {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    public List<Equipment> getEquipmentType(@PathVariable EquipType equiptype){
+        return equipmentRepo.findEquipmentByEquipType(equiptype);
     }
 
 }
