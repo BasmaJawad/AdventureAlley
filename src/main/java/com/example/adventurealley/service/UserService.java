@@ -89,5 +89,14 @@ public class UserService {
         return equipmentRepo.findEquipmentByEquipType(equiptype);
     }
 
+    public List<Reservation> getReservations(){
+        return reservationRepo.findAll();
+    }
+
+
+    public List<Reservation> getReservationsByMonth(String year, String month){
+        return reservationRepo.findByMonth(year, month);
+    }
+
 }
 

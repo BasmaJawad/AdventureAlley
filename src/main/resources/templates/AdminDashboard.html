@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/admin.css">
+    <link rel="stylesheet" href="../static/AdminDashboard.css">
+    <script src="https://kit.fontawesome.com/d17e4552c5.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div>
+    <nav class="sidebar">
+
+        <a href="#" class="brand">
+            <h1> Oversigt</h1>
+        </a>
+        <ul>
+            <li>
+                <a href=#popupUser" id="u-Link">
+                    <i class="brugere"></i>
+                    <span> OPRET BRUGER </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="AdminViewReservations.html">
+                    <i class="reservationer"></i>
+                    <span> RESERVATIONER </span>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class="mail"></i>
+                    <span> UDSTYR </span>
+                </a>
+            </li>
+        </ul>
+        <img id="logo" src="../static/images/logoPurple.png"/>
+    </nav>
+</div>
+
+<div id="dashBody">
+
+    <div id="dashHeader">
+        <h1>Dashboard</h1>
+    </div>
+
+    <div id="KPI">
+        <div class="topBox">
+            <i class="fa-regular fa-calendar fa-3x" style="color: #f3e0ff;"></i>
+            <div id="reservationerMåned" class="topBoxTitle"> Reservationer Denne Måned</div>
+        </div>
+
+        <div class="topBox">
+            <i class="fa-solid fa-calendar-day fa-3x" style="color: #f3e0ff;"></i>
+            <div id="reservationerDag" class="topBoxTitle">Reservationer I Dag</div>
+        </div>
+
+        <div class="topBox">
+            <i class="fa-solid fa-calendar-check fa-shake fa-3x" style="color: #f3e0ff;"></i>
+            <div id="afventerGodkendelse" class="topBoxTitle">Afventer Godkendelse</div>
+        </div>
+    </div>
+
+    <div id="KPI2">
+
+        <div id="revenueDiv">
+            <h2>Forventet omsætning</h2>
+            <p id="month"></p>
+            <div id="totalDiv">
+                <h3 id="revenue"></h3>
+            </div>
+            <i id="cashIcon" class="fa-solid fa-sack-dollar fa-bounce fa-2x" style="color: #ffb057;"></i>
+        </div>
+
+        <div id="popActivity">
+            <h2>Mest Populær Aktivitet</h2>
+            <div id="popActivityImgDiv">
+                <img id="popActivityImg" src="../static/images/aktivitet1.jpg" alt="popActivityImg">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="../JS/Dashboard.js"></script>
+
+</body>
+</html>

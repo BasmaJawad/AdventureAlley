@@ -61,13 +61,20 @@ public class UserRESTcontroller {
     public ResponseEntity<User> deleteUser(@PathVariable int id){
      return userService.deleteUser(id);
     }
-
-
     @GetMapping("/udstyrByEquipType/{equiptype}")
-        public List<Equipment> getEquipmentByStatus(@PathVariable EquipType equiptype){
+    public List<Equipment> getEquipmentByStatus(@PathVariable EquipType equiptype){
         return userService.getEquipmentType(equiptype);
     }
 
+    @GetMapping("/reservations")
+    public List<Reservation> getReservations(){
+        return userService.getReservations();
+    }
+
+    @GetMapping("/reservationsByMonth/{year}/{month}")
+    public List<Reservation> getReservationsByMonth(@PathVariable String year, @PathVariable String month){
+        return userService.getReservationsByMonth(year, month);
+    }
 
 
 }
