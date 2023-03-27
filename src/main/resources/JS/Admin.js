@@ -98,7 +98,7 @@ function displayUser(user){
 
     const tableBody = document.createElement("tr")
 
-    //LÆs op på setAttribute
+    //setAttribute sætter attributter på html elementer
     tableBody.setAttribute("data-userid", user.id);
 
     tableBody.innerHTML =
@@ -118,7 +118,10 @@ function displayUser(user){
 
     const deleteBtn = tableBody.querySelector(".delete-btn");
     deleteBtn.addEventListener("click", () => {
-        restDeleteUser(user);
+        const confirmed = confirm("Er du sikker på at du vil slette " + user.username + "?")
+        if (confirmed) {
+            restDeleteUser(user);
+        }
     });
 
     table.appendChild(tableBody)
@@ -137,7 +140,7 @@ function displayEditForm(user) {
         "'><br>" +
         "<label for='usertype'>Brugertype:</label>" +
         "<select id='usertype' name='usertype'>" +
-        "<option value='ADMIN'" + (user["usertype"] === "ADMIN" ? " selected" : "") + ">ADMIN</option>" +
+        "<option value='ADMIN'" + (user["usertype"] === "ADMIN" ? " selected" : "") + ">ADMIN</option>" + //hvis brugertype er admin, så sæt selected
         "<option value='EMPLOYEE'" + (user["usertype"] === "EMPLOYEE" ? " selected" : "") + ">EMPLOYEE</option>" +
         "</select><br>" +
         "<button type ='submit' id = 'submitFormB' >Gem ændringer</button>" +
@@ -177,14 +180,15 @@ function displayEditForm(user) {
 
 function updateTableRow(user) {
     const table = document.getElementById("tableBody");
-    const tableRows = table.getElementsByTagName("tr");
+    const tableRows = table.getElementsByTagName("tr"); //ale <tr> elementer i <table>
 
-    //opdater tabel på siden med det samme
+    //opdater tabel på siden med det samme (kun usertype virker pt)
 
+    //loop over alle <tr> elementer i <table>
     for (let i = 0; i < tableRows.length; i++) {
-        const tableData = tableRows[i].getElementsByTagName("td");
-        if (tableData[0].textContent === user.username) {
-            tableData[1].textContent = user["usertype"];
+        const tableData = tableRows[i].getElementsByTagName("td"); //henter alle <td> (celler) elementer i <tr>
+        if (tableData[0].textContent === user.username) { //hvis navn i <td> er lig med navn i user objekt
+            tableData[1].textContent = user["usertype"]; //opdater usertype
             break;
         }
     }
@@ -242,11 +246,14 @@ async function restDeleteUser(user) {
 
     if (!response.ok){
         console.log("failed to delete")
+
     }
-    const table = document.getElementById("tableBody");
-    //LÆS OP PÅ hva enden følgende linje er
-    const row = table.querySelector(`tr[data-userid="${user.id}"]`);
-    table.removeChild(row);
+    else {
+        const table = document.getElementById("tableBody");
+        //finder den <tr> med data-userid attribute der har value = user id. (Acesser setAttribute)
+            const row = table.querySelector(`tr[data-userid="${user.id}"]`);
+        table.removeChild(row);
+    }
 
     return response
 

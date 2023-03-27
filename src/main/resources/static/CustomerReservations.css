@@ -12,9 +12,9 @@
     float: left;
     margin: 20px;
     padding: 25px;
-    border: 1px solid  #e26900;
-    box-shadow: 0 0 20px #fc8d2d;
-    background: #101617;;
+    border: 2px solid #fc8d2d;
+    box-shadow: 0 0 0px #fc8d2d;
+    background: black;;
     line-height: 25px;
 }
 

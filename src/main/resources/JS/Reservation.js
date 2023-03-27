@@ -222,6 +222,10 @@ function checkValue() {
         alert("Du skal vælge en dato")
         return false;
     }
+    if (chosenActivity == undefined){
+        alert("Du skal vælge en tid")
+        return false;
+    }
     return true;
 }
 

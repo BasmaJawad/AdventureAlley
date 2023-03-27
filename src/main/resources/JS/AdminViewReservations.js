@@ -35,6 +35,7 @@ fetchReservationsByStatus('CANCELLED');
 
 function displayReservations(reservation, index) {
 
+    //Index er det reservationens nummer/plads i arrayet, som for each loop selv kan tælle op for os
 
     const tablebody = document.getElementById("tableBody")
     const tr = document.createElement("tr")
