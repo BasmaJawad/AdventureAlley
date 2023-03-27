@@ -8,13 +8,13 @@
 #dashHeader {
     margin: 50px;
     margin-left: 70px;
+    margin-bottom: 0px;
     color: var(--primary);
 }
 
 #KPI {
     margin: 50px;
     width: 95%;
-    height: 170px;
 
 }
 
@@ -102,7 +102,9 @@ h2 {
 }
 
 #revenue{
-    color: white;
+    background: linear-gradient( to top,  #d39550, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent ;
     margin-top: 60px;
     font-size: 70px;
 }

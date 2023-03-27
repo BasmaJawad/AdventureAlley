@@ -75,7 +75,7 @@ function selectTime(element, activityTimes) {
 
     // document.getElementById("selectedTime").value = activityTimes; //VIRKER IKKE
 
-    chosenActivity = activityTimes;
+    chosenActivity = activityTimes; //gemmer den valgte aktivitet i en variabel
 
     console.log(chosenActivity)
 
@@ -108,11 +108,12 @@ function getAvailableActivityTimes() {
     //map laver ny array for hvert element i reservations, ved at parse det element i en function, som returnerer det ønskede output
     //så det fungere lidt som foreach(), bare hvor det sætter det i et array
     const reservedActivityIds = reservations.map(getReservedActivityIds) //ny liste med alle aktivitet id'er fra reservations
-    //filter laver ny array med hvert element i activities, der ikke findes i reservedActivityIds. Filter() er en function, som returnerer true eller false
+
+    //filter laver ny array med hvert element i activities, der ikke findes i reservedActivityIds. Filter() returnerer true eller false
     const availabeActivityTimes = activities.filter(activities => !reservedActivityIds.includes(activities.id)) //ny liste med alle aktiviteter, som ikke er i reservations
 
 
-    //for at slette de andre timeDivs i wrapperen, sætter vi innerHTML til tom
+    //for at slette de andre timeDivs i wrapperen
     timeDivWrapper.innerHTML = '';
     availabeActivityTimes.forEach(displayTimes)
 }
@@ -125,6 +126,7 @@ function getReservedActivityIds(reservation) {
 async function showLoggedCustomer() {
 
     let customer = localStorage.getItem("customer")
+
     customer = JSON.parse(customer)
     if (customer != undefined) {
         const customerName = document.getElementById("customerName") //for at desplaye navn på kunde
