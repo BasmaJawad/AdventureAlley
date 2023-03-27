@@ -9,13 +9,12 @@ body{
     transition: 0.3s ease ease-in-out;
 }
 :root{
-    --accent: #112d36; /* hover farve*/
+    --accent: #49058f; /* hover farve*/
     --primary: #fff;/* panel farve*/
     --secondary: #f5f7fc;/* baggrund farve*/
     --text-default: #000;/* tekst panel farve*/
-    --text-primary: #1d1933;/* tekst oversigt farve*/
-    --text-secondary: #1a086e;
-}
+    --text-primary: #271741;/* tekst oversigt farve*/
+    --text-secondary: #1a086e;}
 
 *{
     box-sizing: border-box;
@@ -110,7 +109,6 @@ p {
     color: white;
 
 }
-
 h2, h3, h4, h5{
     position: relative;
     margin-left: 20px;
@@ -167,16 +165,16 @@ h6, #pp {
 
  /* Ny måde at lave en popup div (test) */
 #popup1, #popup2 {
-    margin-top: 160px;
+    top: 15%;
     position: relative;
     left: 45.5%;
     transform: translate(-50%, -50%);
     display: none;
     padding: 30px;
     width: 1000px;
-    background-color: var(--primary);
+    background-color: rgb(252, 252, 252);
     border-radius: 20px;
-    border: 2px solid #3a0669;
+    border: 2px solid rgb(180, 171, 171);
 }
 
 #popup1 p, #popup2 p {
@@ -191,11 +189,12 @@ h6, #pp {
     right: 10px;
     cursor: pointer;
     font-size: 20px;
-    background-color: var(--accent);
+    background-color: #301e42;
     color:white;
     border: none;
     border-radius: 40px;
-    width: 30px;
+    width: 39px;
+    height: 40px;
 }
 
 table {
@@ -204,10 +203,16 @@ table {
 }
 
 
-th, td {
+th {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    align-items: center;
+
+}
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    align-items: center;
 }
 
 th {
@@ -218,6 +223,9 @@ th {
 td img {
     max-width: 100%;
     height: auto;
+    align-items: center;
+    display: block;
+    margin-left: 10px;
 }
 
 td a:hover img {
@@ -226,9 +234,10 @@ td a:hover img {
 
 td:last-child {
     text-align: center;
+
 }
 
-#gun1, #gun2, #gun3, #laser1, #laser2, #laser3{
+#gun1, #gun2, #gun3{
     height: 100px;
     width: 180px;
     margin-left: 20px;
@@ -236,6 +245,15 @@ td:last-child {
     position: center;
     
 }
+#laser1, #laser2, #laser3{
+    height: 150px;
+    width: 180px;
+    margin-left: 20px;
+    padding: 10px;
+    position: center;
+
+}
+
 
 
 

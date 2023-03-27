@@ -19,6 +19,10 @@ function hidePopups() {
 paintballCard.onclick = () => {
     hidePopups()
     popup1.style.display = 'block';
+    fetchEquipmentByType()
+
+
+
 
 };
 
@@ -43,4 +47,23 @@ closeButton.onclick = () => {
 closeButton2.onclick = () => {
     popup2.style.display = 'none';
 };
+
+function fetchAny(url) {
+    console.log(url)
+    return fetch(url).then((response) => response.json())
+}
+
+let paintballGuns = []
+async function fetchEquipmentByType() {
+    const url = 'http://localhost:8080/udstyrByEquipType/PAINTBALLREDGUN';
+    paintballGuns = await fetchAny(url);
+    console.log(paintballGuns.length)
+
+}
+
+function displayEquipment(equipment){
+
+
+}
+
 
