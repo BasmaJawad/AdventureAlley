@@ -109,7 +109,6 @@ p {
     color: white;
 
 }
-
 h2, h3, h4, h5{
     position: relative;
     margin-left: 20px;
@@ -173,9 +172,9 @@ h6, #pp {
     display: none;
     padding: 30px;
     width: 1000px;
-    background-color: rgba(255, 255, 255, 0.68);
+    background-color: rgb(252, 252, 252);
     border-radius: 20px;
-    border: 2px solid #2a2727;
+    border: 2px solid rgb(180, 171, 171);
 }
 
 #popup1 p, #popup2 p {
@@ -190,7 +189,7 @@ h6, #pp {
     right: 10px;
     cursor: pointer;
     font-size: 20px;
-    background-color: var(--accent);
+    background-color: #301e42;
     color:white;
     border: none;
     border-radius: 40px;

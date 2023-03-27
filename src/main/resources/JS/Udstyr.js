@@ -19,7 +19,11 @@ function hidePopups() {
 paintballCard.onclick = () => {
     hidePopups()
     popup1.style.display = 'block';
-    fetchEquipmentByType('paintball')
+    fetchEquipmentByType()
+
+
+
+
 };
 
 lasertagCard.onclick = () => {
@@ -49,10 +53,12 @@ function fetchAny(url) {
     return fetch(url).then((response) => response.json())
 }
 
-async function fetchEquipmentByType(equiptype) {
-    const url = 'http://localhost:8080/udstyrByEquipType/$(equiptype)';
-    const equipment = await fetchAny(url);
-    console.log(equipment)
+let paintballGuns = []
+async function fetchEquipmentByType() {
+    const url = 'http://localhost:8080/udstyrByEquipType/PAINTBALLREDGUN';
+    paintballGuns = await fetchAny(url);
+    console.log(paintballGuns.length)
+
 }
 
 function displayEquipment(equipment){

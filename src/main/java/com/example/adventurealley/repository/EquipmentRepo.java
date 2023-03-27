@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface EquipmentRepo extends JpaRepository<Equipment, Integer> {
-  List<Equipment> findEquipmentByEquipType(EquipType equiptype);
+  List<Equipment> findEquipmentByEquiptype(EquipType equiptype);
 
 
 }

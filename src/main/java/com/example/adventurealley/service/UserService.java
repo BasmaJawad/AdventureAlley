@@ -86,7 +86,7 @@ public class UserService {
     }
 
     public List<Equipment> getEquipmentType(@PathVariable EquipType equiptype){
-        return equipmentRepo.findEquipmentByEquipType(equiptype);
+        return equipmentRepo.findEquipmentByEquiptype(equiptype);
     }
 
     public List<Reservation> getReservations(){
